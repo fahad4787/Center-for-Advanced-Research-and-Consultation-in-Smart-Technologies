@@ -1,8 +1,20 @@
 (function () {
       var banner = document.getElementById('banner');
-      if (!banner) return;
+      if (!banner || !banner.classList.contains('banner--slider')) return;
 
-      var slides = [
+      var isEn = document.documentElement.lang === 'en';
+      var slides = isEn ? [
+            {
+                  title: 'Research Today to Innovate Tomorrow',
+                  text: 'We develop applied research and advanced consultation in smart technologies to enable digital transformation and achieve Saudi Vision 2030 targets.',
+                  btn: 'Discover More About the Center'
+            },
+            {
+                  title: 'Smart Governance for Future Cities',
+                  text: 'Exploring the role of artificial intelligence and the Internet of Things in developing smart governance for urban services.',
+                  btn: 'Featured Studies'
+            }
+      ] : [
             {
                   title: 'نبحث اليوم لنبتكر الغد',
                   text: 'نعمل على تطوير بحوث تطبيقية واستشارات متقدمة في التقنيات الذكية لتمكين التحول الرقمي وتحقيق مستهدفات رؤية السعودية 2030.',

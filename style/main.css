@@ -6378,11 +6378,20 @@ p {
   padding: 0;
 }
 
+.list {
+  margin: 0;
+  padding-right: 15px;
+}
 .list li {
   margin-bottom: 18px;
 }
 .list li:last-child {
   margin-bottom: 0;
+}
+
+html[dir=ltr] .list {
+  padding-right: 0;
+  padding-left: 15px;
 }
 
 .btn {
@@ -6445,6 +6454,13 @@ p {
   transform: translateX(-6px);
 }
 
+html[dir=ltr] .btn.icon::after {
+  content: "\f054";
+}
+html[dir=ltr] .btn.icon.btn-primary:hover::after {
+  transform: translateX(6px);
+}
+
 .badge {
   background: #2D3C26;
   color: #F5F5F5;
@@ -6458,6 +6474,36 @@ p {
 
 .w-65 {
   width: 65% !important;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.heading::before, .heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: rgba(45, 60, 38, 0.4);
+}
+.heading h1,
+.heading h2,
+.heading h3,
+.heading h4,
+.heading h5,
+.heading h6 {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.gridBox {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
 }
 
 html {
@@ -6479,6 +6525,11 @@ body {
   color: rgba(0, 0, 0, 0.7);
   margin: 0;
   padding: 0;
+}
+
+html[dir=ltr] body {
+  word-spacing: normal;
+  font-size: 16px;
 }
 
 .row > * {
@@ -6540,6 +6591,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+html[dir=ltr] #header .header__tool {
+  flex-direction: row;
+}
 #header .header__sep {
   margin: 0 0.5rem;
   color: #2D3C26;
@@ -6590,6 +6644,12 @@ section {
 .box.borderBox {
   border: 1px solid rgba(45, 60, 38, 0.2);
   padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box.borderBox .iconImg {
+  margin-bottom: 18px;
 }
 .box.borderBox:hover {
   border: 1px solid rgba(45, 60, 38, 0.2);
@@ -6620,6 +6680,182 @@ section {
      object-fit: contain;
 }
 
+.orgChart .box {
+  padding: 12px;
+  border-radius: 8px;
+}
+.orgChart .box.dark {
+  background-color: #3C4A30;
+}
+.orgChart .box.dark h4 {
+  color: #fff !important;
+}
+.orgChart .box.borderBox {
+  box-shadow: 0 4px 6px 0 #2D3C26;
+}
+.orgChart .iconBox {
+  margin-bottom: 0;
+}
+.orgChart .iconBox h4 {
+  font-weight: 300;
+}
+.orgChart .holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 100px;
+  gap: 100px;
+  position: relative;
+}
+.orgChart .holder.col1 .col {
+  position: relative;
+}
+.orgChart .holder.col1 .col:after {
+  content: "";
+  position: absolute;
+  background-color: #2D3C26;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 1px;
+  height: 100px;
+}
+.orgChart .holder.col2 {
+  max-width: 600px;
+}
+.orgChart .holder.col2 .col:last-child {
+  position: absolute;
+  left: 0;
+}
+.orgChart .holder.col2 .col:first-child {
+  position: relative;
+  z-index: 1;
+}
+.orgChart .holder.col2 .col:first-child:before {
+  content: "";
+  position: absolute;
+  background-color: #2D3C26;
+  width: 58px;
+  height: 1px;
+  top: 50%;
+  left: -58px;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.orgChart .holder.col2 .col:first-child:after {
+  content: "";
+  position: absolute;
+  background-color: #2D3C26;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 1px;
+  height: 100px;
+}
+.orgChart .holder.col3 {
+  position: relative;
+  max-width: 915px;
+  z-index: 1;
+}
+.orgChart .holder.col3:after {
+  position: absolute;
+  content: "";
+  top: -50px;
+  border: 1px solid #2D3C26;
+  border-bottom: 0;
+  width: 75%;
+  height: 50px;
+  z-index: -1;
+}
+.orgChart .holder.col3 .col {
+  position: relative;
+}
+.orgChart .holder.col3 .col:first-child:after {
+  content: "";
+  position: absolute;
+  background-color: #2D3C26;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 1px;
+  height: 50px;
+}
+.orgChart .holder.col4 {
+  position: relative;
+  gap: 35px;
+  justify-content: flex-start;
+  max-width: 665px;
+  margin: unset;
+}
+.orgChart .holder.col4:after {
+  position: absolute;
+  content: "";
+  top: -50px;
+  border: 1px solid #2D3C26;
+  border-bottom: 0;
+  width: 90%;
+  right: 10%;
+  width: 80%;
+  height: 50px;
+}
+.orgChart .holder.col4 .col:nth-child(2), .orgChart .holder.col4 .col:nth-child(3) {
+  position: relative;
+}
+.orgChart .holder.col4 .col:nth-child(2):after, .orgChart .holder.col4 .col:nth-child(3):after {
+  content: "";
+  position: absolute;
+  background-color: #2D3C26;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100%;
+  width: 1px;
+  height: 50px;
+}
+.orgChart .col {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+html[dir=ltr] .orgChart .holder.col2 {
+  max-width: 740px;
+}
+html[dir=ltr] .orgChart .holder.col2 .col:last-child {
+  left: auto;
+  right: 0;
+}
+html[dir=ltr] .orgChart .holder.col2 .col:first-child::before {
+  left: auto;
+  right: -58px;
+}
+html[dir=ltr] .orgChart .holder.col3 {
+  max-width: 100%;
+}
+html[dir=ltr] .orgChart .holder.col3 .col:first-child::after {
+  display: none;
+}
+html[dir=ltr] .orgChart .holder.col3 .col:last-child {
+  position: relative;
+}
+html[dir=ltr] .orgChart .holder.col3 .col:last-child::after {
+  content: "";
+  position: absolute;
+  background-color: #2D3C26;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 1px;
+  height: 50px;
+}
+html[dir=ltr] .orgChart .holder.col4 {
+  margin-left: auto;
+  margin-right: 0;
+}
+html[dir=ltr] .orgChart .holder.col4::after {
+  left: 10%;
+  right: auto;
+}
+
 footer {
   background-color: #3C4A30;
   color: #fff;
@@ -6642,6 +6878,10 @@ footer .contactList li {
   justify-content: flex-end;
   align-items: center;
   gap: 0.5rem;
+}
+html[dir=ltr] footer .contactList li {
+  flex-direction: row;
+  justify-content: flex-start;
 }
 footer .socialLinks {
   display: flex;

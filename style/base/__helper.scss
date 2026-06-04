@@ -9,12 +9,20 @@
 }
 
 .list{
+      margin: 0;
+      padding-right: 15px;
+      
       li{
             margin-bottom: 18px;
             &:last-child{
                   margin-bottom: 0;
             }
       }
+}
+
+html[dir='ltr'] .list {
+  padding-right: 0;
+  padding-left: 15px;
 }
 
 .btn {
@@ -100,6 +108,16 @@
       }
 }
 
+html[dir='ltr'] .btn.icon {
+      &::after {
+            content: '\f054';
+      }
+
+      &.btn-primary:hover::after {
+            transform: translateX(6px);
+      }
+}
+
 .badge{
       background: #2D3C26;
       color: #F5F5F5;
@@ -113,4 +131,38 @@
 
 .w-65{
       width: 65% !important;
+}
+
+.heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+      text-align: center;
+
+      &::before,
+      &::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: rgba(45, 60, 38, 0.4);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+            margin: 0;
+            flex-shrink: 0;
+      }
+}
+
+
+.gridBox{
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
 }
