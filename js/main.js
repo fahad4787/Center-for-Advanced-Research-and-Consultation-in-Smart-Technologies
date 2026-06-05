@@ -65,7 +65,10 @@
             function closeMenu() {
                   header.classList.remove('is-nav-open');
                   document.body.classList.remove('is-nav-open');
-                  if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+                  if (menuToggle) {
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.setAttribute('aria-label', isEn ? 'Open menu' : 'فتح القائمة');
+                  }
                   if (overlay) overlay.hidden = true;
             }
 
@@ -83,7 +86,22 @@
                   header.classList.add('is-nav-open');
                   document.body.classList.add('is-nav-open');
                   menuToggle.setAttribute('aria-expanded', 'true');
+                  menuToggle.setAttribute('aria-label', isEn ? 'Close menu' : 'إغلاق القائمة');
                   if (overlay) overlay.hidden = false;
+            }
+
+            function setupNavClose() {
+                  if (!nav) return;
+                  var head = nav.querySelector('.header__navHead');
+                  if (!head || head.querySelector('.header__navClose')) return;
+
+                  var closeBtn = document.createElement('button');
+                  closeBtn.type = 'button';
+                  closeBtn.className = 'header__navClose';
+                  closeBtn.setAttribute('aria-label', isEn ? 'Close menu' : 'إغلاق القائمة');
+                  closeBtn.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+                  closeBtn.addEventListener('click', closeMenu);
+                  head.appendChild(closeBtn);
             }
 
             if (searchToggle && searchPanel) {
@@ -97,6 +115,8 @@
             }
 
             if (menuToggle && nav) {
+                  setupNavClose();
+
                   menuToggle.addEventListener('click', function () {
                         if (header.classList.contains('is-nav-open')) {
                               closeMenu();

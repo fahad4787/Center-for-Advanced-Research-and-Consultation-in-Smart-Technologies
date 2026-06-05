@@ -276,9 +276,8 @@ html[dir='ltr'] {
 
 .banner--research .researchFilterWrap {
       position: absolute;
+      inset-inline: 0;
       bottom: 0;
-      left: 0;
-      right: 0;
       z-index: 2;
       transform: translateY(50%);
       margin: 0;

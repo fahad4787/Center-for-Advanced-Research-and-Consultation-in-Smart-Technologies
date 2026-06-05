@@ -1,7 +1,7 @@
 (function () {
       var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var effects = ['rise', 'reveal', 'fan', 'sweep', 'scale', 'clip-up'];
-      var staggerSelectors = '.badge, p.w-65, p.text-center, .box.green, .box.borderBox, .col-lg-6 > .imgBox, .col-lg-5 > .imgBox, .col-lg-7 > .imgBox, .col-lg-6 > h2, .col-lg-6 > h3, .col-lg-5 > p, .col-lg-7 > h2, .col-lg-7 > h3, .brandHolder > img, .heading, .gridBox > .col, .orgChart > .holder, .list > li, .banner h1, .banner-list > li, .filterForm:not(.inlineBox):not(.researchFilter), .researchFilter__row, .eventsTab, .eventsSort, .imgCard, .researchCard, .eventsGrid > .text-center, #researchEmpty h4, [data-sa-stagger] > h4, .eventsFeatured__content .box';
+      var staggerSelectors = '.badge, p.w-65, p.w-lg-65, p.text-center, .box.green, .box.borderBox, .col-lg-6 > .imgBox, .col-lg-5 > .imgBox, .col-lg-7 > .imgBox, .col-lg-6 > h2, .col-lg-6 > h3, .col-lg-5 > p, .col-lg-7 > h2, .col-lg-7 > h3, .brandHolder > img, .heading, .gridBox > .col, .orgChart > .holder, .list > li, .banner h1, .banner-list > li, .filterForm:not(.inlineBox):not(.researchFilter), .researchFilter__row, .eventsTab, .eventsSort, .imgCard, .researchCard, .eventsGrid > .text-center, #researchEmpty h4, [data-sa-stagger] > h4, .eventsFeatured__content .box';
       var observer;
 
       function getEffect(el) {

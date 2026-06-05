@@ -152,6 +152,16 @@ html[dir='ltr'] .btn.icon {
       width: 65% !important;
 }
 
+@media (min-width: 992px) {
+      .w-lg-65 {
+            width: 65% !important;
+      }
+
+      .h-lg-100 {
+            height: 100% !important;
+      }
+}
+
 .heading {
       display: flex;
       align-items: center;
