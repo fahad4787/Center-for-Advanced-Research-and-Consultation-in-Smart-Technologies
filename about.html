@@ -13,27 +13,53 @@
       <body>
             <div id="wrapper">
                   <header id="header">
+                  <button type="button" class="header__overlay" id="headerOverlay" hidden aria-label="إغلاق القائمة"></button>
                         <div class="container">
-                              <div class="d-flex align-items-center justify-content-between gap-3">
+                              <div class="header__bar d-flex align-items-center justify-content-between gap-3">
                                     <a href="index.html" class="header__logo flex-shrink-0">
                                           <img src="images/logo.svg" alt="مركز الأبحاث المتقدمة والاستشارات في التقنيات الذكية" width="100" height="50">
                                     </a>
-                                    <nav class="header__nav flex-grow-1" aria-label="القائمة الرئيسية">
-                                          <ul class="d-flex justify-content-center align-items-center gap-4 list-unstyled mb-0">
-                                                <li><a href="index.html">الرئيسية</a></li>
-                                                <li><a href="#">البحوث والدراسات</a></li>
-                                                <li><a href="events.html">الفعاليات</a></li>
-                                                <li><a href="organizational-structure.html">الهيكل التنظيمي</a></li>
-                                                <li><a href="about.html" class="is-active">عن المركز</a></li>
-                                          </ul>
+                                                                        <nav class="header__nav" id="headerNav" aria-label="القائمة الرئيسية">
+                                          <div class="header__navHead">
+                                                <a href="index.html" class="header__navBrand">
+                                                      <img src="images/logo.svg" alt="">
+                                                </a>
+                                                <p class="header__navLabel">استكشف المركز</p>
+                                          </div>
+                                          <div class="header__navPanel">
+                                                <ul class="list-unstyled mb-0">
+                                                <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+                                                <li><a href="research-and-studies.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>البحوث والدراسات</span></a></li>
+                                                <li><a href="events.html"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>الفعاليات</span></a></li>
+                                                <li><a href="organizational-structure.html"><i class="fa-solid fa-sitemap" aria-hidden="true"></i><span>الهيكل التنظيمي</span></a></li>
+                                                <li><a href="about.html" class="is-active"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>عن المركز</span></a></li>
+                                                </ul>
+                                          </div>
+                                          <div class="header__navFoot">
+                                                <a href="#" class="header__navCta"><i class="fa-solid fa-user" aria-hidden="true"></i><span>دخول</span></a>
+                                          </div>
                                     </nav>
-                                    <div class="header__tools d-flex align-items-center flex-shrink-0">
-                                          <a href="#" class="header__tool"><i class="fa-solid fa-user" aria-hidden="true"></i><span>دخول</span></a>
-                                          <span class="header__sep" aria-hidden="true">|</span>
-                                          <a href="#" class="header__tool"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>بحث</span></a>
-                                          <span class="header__sep" aria-hidden="true">|</span>
-                                          <a href="about-en.html" class="header__tool" hreflang="en"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>EN</span></a>
-
+                                    <div class="header__actions d-flex align-items-center flex-shrink-0">
+                                          <div class="header__tools d-flex align-items-center">
+                                                <a href="#" class="header__tool header__tool--login"><i class="fa-solid fa-user" aria-hidden="true"></i><span class="header__toolLabel">دخول</span></a>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <button type="button" class="header__tool header__searchToggle" aria-expanded="false" aria-controls="headerSearch">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span class="header__toolLabel">بحث</span>
+                                                </button>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <a href="about-en.html" class="header__tool" hreflang="en"><i class="fa-solid fa-globe" aria-hidden="true"></i><span class="header__toolLabel">EN</span></a>
+                                          </div>
+                                    <div class="header__search" id="headerSearch">
+                                          <form class="header__searchForm" action="research-and-studies.html" method="get" role="search">
+                                                <input type="search" class="header__searchInput" name="q" placeholder="ابحث في البحوث والدراسات..." autocomplete="off">
+                                                <button type="submit" class="header__searchSubmit" aria-label="بحث">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                                </button>
+                                          </form>
+                                    </div>
+                                          <button type="button" class="header__menuToggle" aria-expanded="false" aria-controls="headerNav" aria-label="فتح القائمة">
+                                                <span class="header__menuIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+                                          </button>
                                     </div>
                               </div>
                         </div>
@@ -189,7 +215,6 @@
                         </div>
                   </footer>
             </div>
-            <script src="js/bootstrap.bundle.min.js" defer></script>
             <script src="js/main.js" defer></script>
             <script src="js/scroll-animation.js" defer></script>
       </body>

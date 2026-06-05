@@ -13,26 +13,53 @@
       <body>
             <div id="wrapper">
                   <header id="header">
+                  <button type="button" class="header__overlay" id="headerOverlay" hidden aria-label="Close menu"></button>
                         <div class="container">
-                              <div class="d-flex align-items-center justify-content-between gap-3">
+                              <div class="header__bar d-flex align-items-center justify-content-between gap-3">
                                     <a href="index-en.html" class="header__logo flex-shrink-0">
                                           <img src="images/logo-en.svg" alt="Center for Advanced Research and Consultation in Smart Technologies" width="100" height="50">
                                     </a>
-                                    <nav class="header__nav flex-grow-1" aria-label="Main navigation">
-                                          <ul class="d-flex justify-content-center align-items-center gap-4 list-unstyled mb-0">
-                                                <li><a href="index-en.html">Home</a></li>
-                                                <li><a href="#">Research &amp; Studies</a></li>
-                                                <li><a href="events-en.html" class="is-active">Events</a></li>
-                                                <li><a href="organizational-structure-en.html">Organizational Structure</a></li>
-                                                <li><a href="about-en.html">About the Center</a></li>
-                                          </ul>
+                                                                        <nav class="header__nav" id="headerNav" aria-label="Main navigation">
+                                          <div class="header__navHead">
+                                                <a href="index-en.html" class="header__navBrand">
+                                                      <img src="images/logo-en.svg" alt="">
+                                                </a>
+                                                <p class="header__navLabel">Explore the center</p>
+                                          </div>
+                                          <div class="header__navPanel">
+                                                <ul class="list-unstyled mb-0">
+                                                <li><a href="index-en.html"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Home</span></a></li>
+                                                <li><a href="research-and-studies-en.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Research &amp; Studies</span></a></li>
+                                                <li><a href="events-en.html" class="is-active"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Events</span></a></li>
+                                                <li><a href="organizational-structure-en.html"><i class="fa-solid fa-sitemap" aria-hidden="true"></i><span>Organizational Structure</span></a></li>
+                                                <li><a href="about-en.html"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>About the Center</span></a></li>
+                                                </ul>
+                                          </div>
+                                          <div class="header__navFoot">
+                                                <a href="#" class="header__navCta"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Login</span></a>
+                                          </div>
                                     </nav>
-                                    <div class="header__tools d-flex align-items-center flex-shrink-0">
-                                          <a href="#" class="header__tool"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Login</span></a>
-                                          <span class="header__sep" aria-hidden="true">|</span>
-                                          <a href="#" class="header__tool"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Search</span></a>
-                                          <span class="header__sep" aria-hidden="true">|</span>
-                                          <a href="events.html" class="header__tool" hreflang="ar"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>AR</span></a>
+                                    <div class="header__actions d-flex align-items-center flex-shrink-0">
+                                          <div class="header__tools d-flex align-items-center">
+                                                <a href="#" class="header__tool header__tool--login"><i class="fa-solid fa-user" aria-hidden="true"></i><span class="header__toolLabel">Login</span></a>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <button type="button" class="header__tool header__searchToggle" aria-expanded="false" aria-controls="headerSearch">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span class="header__toolLabel">Search</span>
+                                                </button>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <a href="events.html" class="header__tool" hreflang="ar"><i class="fa-solid fa-globe" aria-hidden="true"></i><span class="header__toolLabel">AR</span></a>
+                                          </div>
+                                    <div class="header__search" id="headerSearch">
+                                          <form class="header__searchForm" action="research-and-studies-en.html" method="get" role="search">
+                                                <input type="search" class="header__searchInput" name="q" placeholder="Search research and studies..." autocomplete="off">
+                                                <button type="submit" class="header__searchSubmit" aria-label="Search">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                                </button>
+                                          </form>
+                                    </div>
+                                          <button type="button" class="header__menuToggle" aria-expanded="false" aria-controls="headerNav" aria-label="Open menu">
+                                                <span class="header__menuIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+                                          </button>
                                     </div>
                               </div>
                         </div>
@@ -64,7 +91,7 @@
                                           </ul>
                                     </div>
                                     <div class="col-lg-4">
-                                          <form class="filterForm" action="" method="get">
+                                          <form class="filterForm" id="eventsFilterForm" action="" method="get">
                                                 <div class="formField">
                                                       <input type="search" class="formField__control" name="q" placeholder="Search for an event..." autocomplete="off">
                                                       <i class="fa-solid fa-magnifying-glass formField__icon" aria-hidden="true"></i>
@@ -108,7 +135,7 @@
                   </div>
 
                   <main>
-                        <section class="section pb-0" data-sa-stagger data-sa-effect="fan">
+                        <section class="section pb-0" id="eventsAreas" data-sa-stagger data-sa-effect="fan">
                               <div class="container">
                                     <div class="heading mb-0">
                                           <h2>Our Areas of Work</h2>
@@ -146,35 +173,232 @@
                                     </div>
                               </div>
                         </section>
-                        <section class="section" data-sa-stagger data-sa-effect="rise">
+                        <section class="section" id="eventsListing">
                               <div class="container">
-                                    <div class="eventsToolbar">
-                                          <div class="eventsTabs" role="tablist" aria-label="Filter events">
-                                                <button type="button" class="eventsTab is-active" role="tab" aria-selected="true" data-filter="all">All</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="conferences">Conferences</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="workshops">Workshops</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="seminars">Seminars</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="programs">Programs &amp; Courses</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="forums">Forums</button>
+                                    <div class="eventsPanel eventsPanel--empty is-active" data-events-panel="empty">
+                                          <div class="eventsToolbar" data-sa-stagger data-sa-effect="rise">
+                                                <div class="eventsTabs" role="tablist" aria-label="Filter events">
+                                                      <button type="button" class="eventsTab is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="conferences">Conferences</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="workshops">Workshops</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="seminars">Seminars</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="programs">Programs &amp; Courses</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="forums">Forums</button>
+                                                </div>
+                                                <div class="formField formField--dropdown formField--compact eventsSort">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__value">Newest first</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="newest" class="is-selected" aria-selected="true">Newest first</li>
+                                                            <li role="option" data-value="oldest" aria-selected="false">Oldest first</li>
+                                                      </ul>
+                                                      <input type="hidden" name="sort" value="newest">
+                                                </div>
                                           </div>
-                                          <div class="formField formField--dropdown formField--compact eventsSort">
-                                                <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
-                                                      <span class="formField__value">Newest first</span>
-                                                </button>
-                                                <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
-                                                <ul class="formField__menu" role="listbox">
-                                                      <li role="option" data-value="newest" class="is-selected" aria-selected="true">Newest first</li>
-                                                      <li role="option" data-value="oldest" aria-selected="false">Oldest first</li>
-                                                </ul>
-                                                <input type="hidden" name="sort" value="newest">
+                                          <div class="emptyStateBox" data-sa="scale">
+                                                <div class="imgBox">
+                                                      <img src="images/empty-en.svg" alt="No search results">
+                                                </div>
+                                                <p>There are no upcoming events currently</p>
+                                                <p class="mb-0">Stay tuned for the announcement soon</p>
                                           </div>
                                     </div>
-                                    <div class="emptyStateBox">
-                                          <div class="imgBox">
-                                                <img src="images/empty-en.svg" alt="No search results">
+
+                                    <div class="eventsPanel eventsPanel--results" data-events-panel="results" hidden>
+                                          <div class="eventsFeatured" data-sa-stagger data-sa-effect="reveal">
+                                                <div class="row">
+                                                      <div class="col-lg-6 eventsFeatured__content">
+                                                            <div class="box borderBox">
+                                                                  <div class="badge">Conference</div>
+                                                                  <h2>Smart Technologies Conference for a Sustainable Future</h2>
+                                                                  <h5 class="mb-3">An annual conference bringing together leading experts and specialists to discuss the latest innovations in smart technologies and their applications across sectors.</h5>
+                                                                  <hr>
+                                                                  <div class="filterForm inlineBox">
+                                                                        <button type="button" class="btn btn-primary icon">View Research</button>
+                                                                        <div>
+                                                                              <i class="fa-solid fa-clock"></i> 09:00 AM - 05:00 PM
+                                                                        </div>
+                                                                        <div>
+                                                                              <i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia
+                                                                        </div>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-6">
+                                                            <div class="imgBox objectFit">
+                                                                  <img src="images/img11.png" alt="Smart Technologies Conference for a Sustainable Future">
+                                                            </div>
+                                                      </div>
+                                                </div>
                                           </div>
-                                          <p>There are no upcoming events currently</p>
-                                          <p class="mb-0">Stay tuned for the announcement soon</p>
+
+                                          <div class="eventsToolbar" data-sa-stagger data-sa-effect="rise">
+                                                <div class="eventsTabs" role="tablist" aria-label="Filter events">
+                                                      <button type="button" class="eventsTab is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="conferences">Conferences</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="workshops">Workshops</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="seminars">Seminars</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="programs">Programs &amp; Courses</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="forums">Forums</button>
+                                                </div>
+                                                <div class="formField formField--dropdown formField--compact eventsSort">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__value">Newest first</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="newest" class="is-selected" aria-selected="true">Newest first</li>
+                                                            <li role="option" data-value="oldest" aria-selected="false">Oldest first</li>
+                                                      </ul>
+                                                      <input type="hidden" name="sort" value="newest">
+                                                </div>
+                                          </div>
+
+                                          <div class="eventsGrid" data-sa-stagger data-sa-effect="fan">
+                                                <div class="row mb-5">
+                                                      <div class="col-lg-3 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img12.png" alt="Big Data Analytics Workshop">
+                                                                        <div class="badge">Workshop</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>Workshop: Big Data Analytics and Decision-Making</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> April 20, 2025</li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink">View details<i class="fa-solid fa-arrow-right"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img13.png" alt="Digital Transformation Conference">
+                                                                        <div class="badge">Conference</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>Conference: Digital Transformation and Innovation in Vital Sectors</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> April 20, 2025</li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink">View details<i class="fa-solid fa-arrow-right"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img14.png" alt="AI Ethics Seminar">
+                                                                        <div class="badge">Seminar</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>Seminar: AI Ethics and Technology Governance</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> April 20, 2025</li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink">View details<i class="fa-solid fa-arrow-right"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img15.png" alt="AI in Government Workshop">
+                                                                        <div class="badge">Workshop</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>Workshop: AI Applications in the Government Sector</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> April 20, 2025</li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink">View details<i class="fa-solid fa-arrow-right"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-lg-0 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img16.png" alt="Innovation Exhibition in Smart Technologies 2025">
+                                                                        <div class="badge">Exhibition</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>Innovation Exhibition in Smart Technologies 2025</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> April 20, 2025</li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink">View details<i class="fa-solid fa-arrow-right"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-lg-0 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img17.png" alt="Fundamentals of AI Training Program">
+                                                                        <div class="badge">Training Program</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>Training Program: Fundamentals of AI and Its Applications</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> April 20, 2025</li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink">View details<i class="fa-solid fa-arrow-right"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-lg-0 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img18.png" alt="Smart Technologies and Sustainable Development Seminar">
+                                                                        <div class="badge">Seminar</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>Seminar: Smart Technologies and Their Role in Sustainable Development</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> April 20, 2025</li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink">View details<i class="fa-solid fa-arrow-right"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img19.png" alt="Cybersecurity for Smart Facilities Training Program">
+                                                                        <div class="badge">Training Program</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>Training Program: Cybersecurity for Smart Facilities</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 AM - 11:00 PM</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> April 20, 2025</li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink">View details<i class="fa-solid fa-arrow-right"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                                <div class="text-center">
+                                                      <button type="button" class="btn btn-primary bg-gray icon">View more events</button>
+                                                </div>
+                                          </div>
                                     </div>
                               </div>
                         </section>
@@ -225,7 +449,6 @@
                         </div>
                   </footer>
             </div>
-            <script src="js/bootstrap.bundle.min.js" defer></script>
             <script src="js/main.js" defer></script>
             <script src="js/form.js" defer></script>
             <script src="js/scroll-animation.js" defer></script>

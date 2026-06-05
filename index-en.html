@@ -13,26 +13,53 @@
       <body>
             <div id="wrapper">
                   <header id="header">
+                  <button type="button" class="header__overlay" id="headerOverlay" hidden aria-label="Close menu"></button>
                         <div class="container">
-                              <div class="d-flex align-items-center justify-content-between gap-3">
+                              <div class="header__bar d-flex align-items-center justify-content-between gap-3">
                                     <a href="index-en.html" class="header__logo flex-shrink-0">
                                           <img src="images/logo-en.svg" alt="Center for Advanced Research and Consultation in Smart Technologies" width="100" height="50">
                                     </a>
-                                    <nav class="header__nav flex-grow-1" aria-label="Main navigation">
-                                          <ul class="d-flex justify-content-center align-items-center gap-4 list-unstyled mb-0">
-                                                <li><a href="#" class="is-active">Home</a></li>
-                                                <li><a href="#">Research &amp; Studies</a></li>
-                                                <li><a href="events-en.html">Events</a></li>
-                                                <li><a href="organizational-structure-en.html">Organizational Structure</a></li>
-                                                <li><a href="about-en.html">About the Center</a></li>
-                                          </ul>
+                                                                        <nav class="header__nav" id="headerNav" aria-label="Main navigation">
+                                          <div class="header__navHead">
+                                                <a href="index-en.html" class="header__navBrand">
+                                                      <img src="images/logo-en.svg" alt="">
+                                                </a>
+                                                <p class="header__navLabel">Explore the center</p>
+                                          </div>
+                                          <div class="header__navPanel">
+                                                <ul class="list-unstyled mb-0">
+                                                <li><a href="index-en.html" class="is-active"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Home</span></a></li>
+                                                <li><a href="research-and-studies-en.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Research &amp; Studies</span></a></li>
+                                                <li><a href="events-en.html"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Events</span></a></li>
+                                                <li><a href="organizational-structure-en.html"><i class="fa-solid fa-sitemap" aria-hidden="true"></i><span>Organizational Structure</span></a></li>
+                                                <li><a href="about-en.html"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>About the Center</span></a></li>
+                                                </ul>
+                                          </div>
+                                          <div class="header__navFoot">
+                                                <a href="#" class="header__navCta"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Login</span></a>
+                                          </div>
                                     </nav>
-                                    <div class="header__tools d-flex align-items-center flex-shrink-0">
-                                          <a href="#" class="header__tool"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Login</span></a>
-                                          <span class="header__sep" aria-hidden="true">|</span>
-                                          <a href="#" class="header__tool"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Search</span></a>
-                                          <span class="header__sep" aria-hidden="true">|</span>
-                                          <a href="index.html" class="header__tool" hreflang="ar"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>AR</span></a>
+                                    <div class="header__actions d-flex align-items-center flex-shrink-0">
+                                          <div class="header__tools d-flex align-items-center">
+                                                <a href="#" class="header__tool header__tool--login"><i class="fa-solid fa-user" aria-hidden="true"></i><span class="header__toolLabel">Login</span></a>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <button type="button" class="header__tool header__searchToggle" aria-expanded="false" aria-controls="headerSearch">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span class="header__toolLabel">Search</span>
+                                                </button>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <a href="index.html" class="header__tool" hreflang="ar"><i class="fa-solid fa-globe" aria-hidden="true"></i><span class="header__toolLabel">AR</span></a>
+                                          </div>
+                                    <div class="header__search" id="headerSearch">
+                                          <form class="header__searchForm" action="research-and-studies-en.html" method="get" role="search">
+                                                <input type="search" class="header__searchInput" name="q" placeholder="Search research and studies..." autocomplete="off">
+                                                <button type="submit" class="header__searchSubmit" aria-label="Search">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                                </button>
+                                          </form>
+                                    </div>
+                                          <button type="button" class="header__menuToggle" aria-expanded="false" aria-controls="headerNav" aria-label="Open menu">
+                                                <span class="header__menuIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+                                          </button>
                                     </div>
                               </div>
                         </div>
@@ -241,7 +268,6 @@
                         </div>
                   </footer>
             </div>
-            <script src="js/bootstrap.bundle.min.js" defer></script>
             <script src="js/main.js" defer></script>
             <script src="js/scroll-animation.js" defer></script>
       </body>

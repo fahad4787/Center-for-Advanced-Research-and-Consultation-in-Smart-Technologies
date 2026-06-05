@@ -135,6 +135,16 @@ html[dir='ltr'] .btn.icon {
       border-radius: 8px;
       margin-bottom: 1.5rem;
       width: fit-content;
+      &.smaller{
+            padding: 3px 8px;
+            font-size: 12px;
+            background: rgba(49, 63, 40, 0.10);
+            border-radius: 6px;
+            color: #2D3C26;
+
+
+
+      }
 }
 
 
@@ -176,7 +186,7 @@ html[dir='ltr'] .btn.icon {
       gap: 1rem;
 
       &.grid4 {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, auto);
 
             .borderBox {
                   justify-content: flex-start;

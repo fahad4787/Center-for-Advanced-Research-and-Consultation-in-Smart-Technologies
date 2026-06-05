@@ -13,27 +13,53 @@
       <body>
             <div id="wrapper">
                   <header id="header">
+                  <button type="button" class="header__overlay" id="headerOverlay" hidden aria-label="إغلاق القائمة"></button>
                         <div class="container">
-                              <div class="d-flex align-items-center justify-content-between gap-3">
+                              <div class="header__bar d-flex align-items-center justify-content-between gap-3">
                                     <a href="index.html" class="header__logo flex-shrink-0">
                                           <img src="images/logo.svg" alt="مركز الأبحاث المتقدمة والاستشارات في التقنيات الذكية" width="100" height="50">
                                     </a>
-                                    <nav class="header__nav flex-grow-1" aria-label="القائمة الرئيسية">
-                                          <ul class="d-flex justify-content-center align-items-center gap-4 list-unstyled mb-0">
-                                                <li><a href="index.html">الرئيسية</a></li>
-                                                <li><a href="#">البحوث والدراسات</a></li>
-                                                <li><a href="events.html" class="is-active">الفعاليات</a></li>
-                                                <li><a href="organizational-structure.html">الهيكل التنظيمي</a></li>
-                                                <li><a href="about.html">عن المركز</a></li>
-                                          </ul>
+                                                                        <nav class="header__nav" id="headerNav" aria-label="القائمة الرئيسية">
+                                          <div class="header__navHead">
+                                                <a href="index.html" class="header__navBrand">
+                                                      <img src="images/logo.svg" alt="">
+                                                </a>
+                                                <p class="header__navLabel">استكشف المركز</p>
+                                          </div>
+                                          <div class="header__navPanel">
+                                                <ul class="list-unstyled mb-0">
+                                                <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i><span>الرئيسية</span></a></li>
+                                                <li><a href="research-and-studies.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>البحوث والدراسات</span></a></li>
+                                                <li><a href="events.html" class="is-active"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>الفعاليات</span></a></li>
+                                                <li><a href="organizational-structure.html"><i class="fa-solid fa-sitemap" aria-hidden="true"></i><span>الهيكل التنظيمي</span></a></li>
+                                                <li><a href="about.html"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>عن المركز</span></a></li>
+                                                </ul>
+                                          </div>
+                                          <div class="header__navFoot">
+                                                <a href="#" class="header__navCta"><i class="fa-solid fa-user" aria-hidden="true"></i><span>دخول</span></a>
+                                          </div>
                                     </nav>
-                                    <div class="header__tools d-flex align-items-center flex-shrink-0">
-                                          <a href="#" class="header__tool"><i class="fa-solid fa-user" aria-hidden="true"></i><span>دخول</span></a>
-                                          <span class="header__sep" aria-hidden="true">|</span>
-                                          <a href="#" class="header__tool"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>بحث</span></a>
-                                          <span class="header__sep" aria-hidden="true">|</span>
-                                          <a href="events-en.html" class="header__tool" hreflang="en"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>EN</span></a>
-
+                                    <div class="header__actions d-flex align-items-center flex-shrink-0">
+                                          <div class="header__tools d-flex align-items-center">
+                                                <a href="#" class="header__tool header__tool--login"><i class="fa-solid fa-user" aria-hidden="true"></i><span class="header__toolLabel">دخول</span></a>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <button type="button" class="header__tool header__searchToggle" aria-expanded="false" aria-controls="headerSearch">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span class="header__toolLabel">بحث</span>
+                                                </button>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <a href="events-en.html" class="header__tool" hreflang="en"><i class="fa-solid fa-globe" aria-hidden="true"></i><span class="header__toolLabel">EN</span></a>
+                                          </div>
+                                    <div class="header__search" id="headerSearch">
+                                          <form class="header__searchForm" action="research-and-studies.html" method="get" role="search">
+                                                <input type="search" class="header__searchInput" name="q" placeholder="ابحث في البحوث والدراسات..." autocomplete="off">
+                                                <button type="submit" class="header__searchSubmit" aria-label="بحث">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                                </button>
+                                          </form>
+                                    </div>
+                                          <button type="button" class="header__menuToggle" aria-expanded="false" aria-controls="headerNav" aria-label="فتح القائمة">
+                                                <span class="header__menuIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+                                          </button>
                                     </div>
                               </div>
                         </div>
@@ -65,7 +91,7 @@
                                           </ul>
                                     </div>
                                     <div class="col-lg-4">
-                                          <form class="filterForm" action="" method="get">
+                                          <form class="filterForm" id="eventsFilterForm" action="" method="get">
                                                 <div class="formField">
                                                       <input type="search" class="formField__control" name="q" placeholder="ابحث عن فعالية..." autocomplete="off">
                                                       <i class="fa-solid fa-magnifying-glass formField__icon" aria-hidden="true"></i>
@@ -109,7 +135,7 @@
                   </div>
 
                   <main>
-                        <section class="section pb-0" data-sa-stagger data-sa-effect="fan">
+                        <section class="section pb-0" id="eventsAreas" data-sa-stagger data-sa-effect="fan">
                               <div class="container">
                                     <div class="heading mb-0">
                                           <h2>مجالات أعمالنا</h2>
@@ -144,237 +170,238 @@
                                                       <p class="mb-0">العنوان الفرعي: مبادرات تعاون وشراكات بحثية واستشارية مع جهات أكاديمية ومؤسسية محليًا ودوليًا.</p>
                                                 </div>
                                           </div>
-                                          
-                                    </div>
-                              </div>
-                        </section>
-                        <section class="section" data-sa-stagger data-sa-effect="rise">
-                              <div class="container">
-                                    <div class="eventsToolbar">
-                                          <div class="eventsTabs" role="tablist" aria-label="تصفية الفعاليات">
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="conferences">المؤتمرات</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="workshops">ورش العمل</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="seminars">ندوات</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="programs">برامج ودورات</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="forums">مؤتمرات</button>
-                                                <button type="button" class="eventsTab is-active" role="tab" aria-selected="true" data-filter="all">الكل</button>
-                                          </div>
-                                          <div class="formField formField--dropdown formField--compact eventsSort">
-                                                <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
-                                                      <span class="formField__value">الأحدث أولاً</span>
-                                                </button>
-                                                <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
-                                                <ul class="formField__menu" role="listbox">
-                                                      <li role="option" data-value="newest" class="is-selected" aria-selected="true">الأحدث أولاً</li>
-                                                      <li role="option" data-value="oldest" aria-selected="false">الأقدم أولاً</li>
-                                                </ul>
-                                                <input type="hidden" name="sort" value="newest">
-                                          </div>
-                                    </div>
-                                    <div class="emptyStateBox">
-                                          <div class="imgBox">
-                                                <img src="images/empty.svg" alt=" لا توجد نتائج للبحث">
-                                          </div>
-                                          <p>لا توجد فعاليات قادمة حالياً</p>
-                                          <p class="mb-0">ترقبوا الإعلان عنها قريباً</p>
-                                    </div>
-                              </div>
-                        </section>
 
-                        <section class="section pb-0">
+                                    </div>
+                              </div>
+                        </section>
+                        <section class="section" id="eventsListing">
                               <div class="container">
-                                    <div class="row">
-                                          <div class="col-lg-6" style="font-size: 14px;">
-                                                <div class="box borderBox">
-                                                      <div class="badge">مؤتمر</div>
-                                                      <h2>مؤتمر التقنيات الذكية لمستقبل مستدام</h2>
-                                                      <h5 class="mb-3">مؤتمر سنوي يجمع نخبة من الخبراء والمتخصصين لمناقشة أحدث الابتكارات في التقنيات الذكية وتطبيقاتها في مختلف القطاعات.</h5>
-                                                      <hr>
-                                                      <div class="filterForm inlineBox">
-                                                            <button class="btn btn-primary icon">عرض البحث</button>
-                                                            <div>
-                                                                  <i class="fa-solid fa-clock"></i> 09:00 ص - 05:00 م
+                                    <div class="eventsPanel eventsPanel--empty is-active" data-events-panel="empty">
+                                          <div class="eventsToolbar" data-sa-stagger data-sa-effect="rise">
+                                                <div class="eventsTabs" role="tablist" aria-label="تصفية الفعاليات">
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="conferences">المؤتمرات</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="workshops">ورش العمل</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="seminars">ندوات</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="programs">برامج ودورات</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="forums">مؤتمرات</button>
+                                                      <button type="button" class="eventsTab is-active" role="tab" aria-selected="true" data-filter="all">الكل</button>
+                                                </div>
+                                                <div class="formField formField--dropdown formField--compact eventsSort">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__value">الأحدث أولاً</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="newest" class="is-selected" aria-selected="true">الأحدث أولاً</li>
+                                                            <li role="option" data-value="oldest" aria-selected="false">الأقدم أولاً</li>
+                                                      </ul>
+                                                      <input type="hidden" name="sort" value="newest">
+                                                </div>
+                                          </div>
+                                          <div class="emptyStateBox" data-sa="scale">
+                                                <div class="imgBox">
+                                                      <img src="images/empty.svg" alt="لا توجد نتائج للبحث">
+                                                </div>
+                                                <p>لا توجد فعاليات قادمة حالياً</p>
+                                                <p class="mb-0">ترقبوا الإعلان عنها قريباً</p>
+                                          </div>
+                                    </div>
+
+                                    <div class="eventsPanel eventsPanel--results" data-events-panel="results" hidden>
+                                          <div class="eventsFeatured" data-sa-stagger data-sa-effect="reveal">
+                                                <div class="row">
+                                                      <div class="col-lg-6 eventsFeatured__content">
+                                                            <div class="box borderBox">
+                                                                  <div class="badge">مؤتمر</div>
+                                                                  <h2>مؤتمر التقنيات الذكية لمستقبل مستدام</h2>
+                                                                  <h5 class="mb-3">مؤتمر سنوي يجمع نخبة من الخبراء والمتخصصين لمناقشة أحدث الابتكارات في التقنيات الذكية وتطبيقاتها في مختلف القطاعات.</h5>
+                                                                  <hr>
+                                                                  <div class="filterForm inlineBox">
+                                                                        <button type="button" class="btn btn-primary icon">عرض البحث</button>
+                                                                        <div>
+                                                                              <i class="fa-solid fa-clock"></i> 09:00 ص - 05:00 م
+                                                                        </div>
+                                                                        <div>
+                                                                              <i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية
+                                                                        </div>
+                                                                  </div>
                                                             </div>
-                                                            <div>
-                                                                  <i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية
+                                                      </div>
+                                                      <div class="col-lg-6">
+                                                            <div class="imgBox objectFit">
+                                                                  <img src="images/img11.png" alt="مؤتمر التقنيات الذكية لمستقبل مستدام">
                                                             </div>
+                                                      </div>
+                                                </div>
+                                          </div>
 
-                                                      </div>
+                                          <div class="eventsToolbar" data-sa-stagger data-sa-effect="rise">
+                                                <div class="eventsTabs" role="tablist" aria-label="تصفية الفعاليات">
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="conferences">المؤتمرات</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="workshops">ورش العمل</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="seminars">ندوات</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="programs">برامج ودورات</button>
+                                                      <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="forums">مؤتمرات</button>
+                                                      <button type="button" class="eventsTab is-active" role="tab" aria-selected="true" data-filter="all">الكل</button>
+                                                </div>
+                                                <div class="formField formField--dropdown formField--compact eventsSort">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__value">الأحدث أولاً</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="newest" class="is-selected" aria-selected="true">الأحدث أولاً</li>
+                                                            <li role="option" data-value="oldest" aria-selected="false">الأقدم أولاً</li>
+                                                      </ul>
+                                                      <input type="hidden" name="sort" value="newest">
                                                 </div>
                                           </div>
-                                          <div class="col-lg-6">
-                                                <div class="imgBox objectFit">
-                                                      <img src="images/img11.png" alt="مؤتمر التقنيات الذكية لمستقبل مستدام">
-                                                </div>
-                                          </div>
-                                    </div>
-                              </div>
-                        </section>
-                        <section class="section">
-                              <div class="container">
-                                    <div class="eventsToolbar">
-                                          <div class="eventsTabs" role="tablist" aria-label="تصفية الفعاليات">
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="conferences">المؤتمرات</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="workshops">ورش العمل</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="seminars">ندوات</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="programs">برامج ودورات</button>
-                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="forums">مؤتمرات</button>
-                                                <button type="button" class="eventsTab is-active" role="tab" aria-selected="true" data-filter="all">الكل</button>
-                                          </div>
-                                          <div class="formField formField--dropdown formField--compact eventsSort">
-                                                <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
-                                                      <span class="formField__value">الأحدث أولاً</span>
-                                                </button>
-                                                <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
-                                                <ul class="formField__menu" role="listbox">
-                                                      <li role="option" data-value="newest" class="is-selected" aria-selected="true">الأحدث أولاً</li>
-                                                      <li role="option" data-value="oldest" aria-selected="false">الأقدم أولاً</li>
-                                                </ul>
-                                                <input type="hidden" name="sort" value="newest">
-                                          </div>
-                                    </div>
-                                    <div class="row mb-5">
-                                          <div class="col-lg-3 mb-4">
-                                                <div class="imgCard">
-                                                      <div class="imgBox">
-                                                            <img src="images/img12.png" alt="#">
-                                                            <div class="badge">ورشة عمل</div>
-                                                      </div>
-                                                      <div class="content">
-                                                            <h4>ورشة عمل: تحليل البيانات الضخمة واتخاذ القرار</h4>
-                                                            <ul>
-                                                                  <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
-                                                                  <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
-                                                                  <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
-                                                            </ul>
-                                                            <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
 
+                                          <div class="eventsGrid" data-sa-stagger data-sa-effect="fan">
+                                                <div class="row mb-5">
+                                                      <div class="col-lg-3 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img12.png" alt="#">
+                                                                        <div class="badge">ورشة عمل</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>ورشة عمل: تحليل البيانات الضخمة واتخاذ القرار</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
+
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img13.png" alt="#">
+                                                                        <div class="badge">مؤتمر</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>مؤتمر: التحول الرقمي والابتكار في القطاعات الحيوية</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img14.png" alt="#">
+                                                                        <div class="badge"> ندوة</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>ندوة: أخلاقيات الذكاء الاصطناعي وحوكمة التقنية</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img15.png" alt="#">
+                                                                        <div class="badge">ورشة عمل</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>ورشة عمل: تطبيقات الذكاء الاصطناعي في القطاع الحكومي</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-lg-0 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img16.png" alt="#">
+                                                                        <div class="badge">معرض</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>معرض الابتكار في التقنيات الذكية 2025</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-lg-0 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img17.png" alt="#">
+                                                                        <div class="badge">برنامج تدريبي</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>برنامج تدريبي: أساسيات الذكاء الاصطناعي وتطبيقاته</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3 mb-lg-0 mb-4">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img18.png" alt="#">
+                                                                        <div class="badge"> ندوة</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>ندوة: التقنيات الذكية ودورها في التنمية المستدامة</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                      <div class="col-lg-3">
+                                                            <div class="imgCard">
+                                                                  <div class="imgBox">
+                                                                        <img src="images/img19.png" alt="#">
+                                                                        <div class="badge">برنامج تدريبي</div>
+                                                                  </div>
+                                                                  <div class="content">
+                                                                        <h4>برنامج تدريبي: الأمن السيبراني للمنشآت الذكية</h4>
+                                                                        <ul>
+                                                                              <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
+                                                                              <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
+                                                                              <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
+                                                                        </ul>
+                                                                        <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
+                                                                  </div>
+                                                            </div>
                                                       </div>
                                                 </div>
-                                          </div>
-                                          <div class="col-lg-3 mb-4">
-                                                <div class="imgCard">
-                                                      <div class="imgBox">
-                                                            <img src="images/img13.png" alt="#">
-                                                            <div class="badge">مؤتمر</div>
-                                                      </div>
-                                                      <div class="content">
-                                                            <h4>مؤتمر: التحول الرقمي والابتكار في القطاعات الحيوية</h4>
-                                                            <ul>
-                                                                  <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
-                                                                  <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
-                                                                  <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
-                                                            </ul>
-                                                            <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                          <div class="col-lg-3 mb-4">
-                                                <div class="imgCard">
-                                                      <div class="imgBox">
-                                                            <img src="images/img14.png" alt="#">
-                                                            <div class="badge"> ندوة</div>
-                                                      </div>
-                                                      <div class="content">
-                                                            <h4>ندوة: أخلاقيات الذكاء الاصطناعي وحوكمة التقنية</h4>
-                                                            <ul>
-                                                                  <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
-                                                                  <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
-                                                                  <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
-                                                            </ul>
-                                                            <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                          <div class="col-lg-3 mb-4">
-                                                <div class="imgCard">
-                                                      <div class="imgBox">
-                                                            <img src="images/img15.png" alt="#">
-                                                            <div class="badge">ورشة عمل</div>
-                                                      </div>
-                                                      <div class="content">
-                                                            <h4>ورشة عمل: تطبيقات الذكاء الاصطناعي في القطاع الحكومي</h4>
-                                                            <ul>
-                                                                  <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
-                                                                  <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
-                                                                  <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
-                                                            </ul>
-                                                            <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                          <div class="col-lg-3 mb-lg-0 mb-4">
-                                                <div class="imgCard">
-                                                      <div class="imgBox">
-                                                            <img src="images/img16.png" alt="#">
-                                                            <div class="badge">معرض</div>
-                                                      </div>
-                                                      <div class="content">
-                                                            <h4>معرض الابتكار في التقنيات الذكية 2025</h4>
-                                                            <ul>
-                                                                  <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
-                                                                  <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
-                                                                  <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
-                                                            </ul>
-                                                            <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                          <div class="col-lg-3 mb-lg-0 mb-4">
-                                                <div class="imgCard">
-                                                      <div class="imgBox">
-                                                            <img src="images/img17.png" alt="#">
-                                                            <div class="badge">برنامج تدريبي</div>
-                                                      </div>
-                                                      <div class="content">
-                                                            <h4>برنامج تدريبي: أساسيات الذكاء الاصطناعي وتطبيقاته</h4>
-                                                            <ul>
-                                                                  <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
-                                                                  <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
-                                                                  <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
-                                                            </ul>
-                                                            <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                          <div class="col-lg-3 mb-lg-0 mb-4">
-                                                <div class="imgCard">
-                                                      <div class="imgBox">
-                                                            <img src="images/img18.png" alt="#">
-                                                            <div class="badge"> ندوة</div>
-                                                      </div>
-                                                      <div class="content">
-                                                            <h4>ندوة: التقنيات الذكية ودورها في التنمية المستدامة</h4>
-                                                            <ul>
-                                                                  <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
-                                                                  <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
-                                                                  <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
-                                                            </ul>
-                                                            <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
-                                                      </div>
-                                                </div>
-                                          </div>
-                                          <div class="col-lg-3">
-                                                <div class="imgCard">
-                                                      <div class="imgBox">
-                                                            <img src="images/img19.png" alt="#">
-                                                            <div class="badge">برنامج تدريبي</div>
-                                                      </div>
-                                                      <div class="content">
-                                                            <h4>برنامج تدريبي: الأمن السيبراني للمنشآت الذكية</h4>
-                                                            <ul>
-                                                                  <li><i class="fa-solid fa-clock"></i> 09:00 ص - 11:00 م</li>
-                                                                  <li><i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية</li>
-                                                                  <li><i class="fa-solid fa-calendar-days"></i> 20 بريل 2025 </li>
-                                                            </ul>
-                                                            <a href="#" class="textLink"> عرض التفاصيل<i class="fa-solid fa-arrow-left"></i></a>
-                                                      </div>
+                                                <div class="text-center">
+                                                      <button type="button" class="btn btn-primary bg-gray icon">عرض المزيد من الفعاليات</button>
                                                 </div>
                                           </div>
                                     </div>
-                                   <div class="text-center">
-                                    <button class="btn btn-primary bg-gray icon">عرض المزيد من الفعاليات</button>
-                                   </div>
                               </div>
                         </section>
 
@@ -425,7 +452,6 @@
                         </div>
                   </footer>
             </div>
-            <script src="js/bootstrap.bundle.min.js" defer></script>
             <script src="js/main.js" defer></script>
             <script src="js/form.js" defer></script>
             <script src="js/scroll-animation.js" defer></script>

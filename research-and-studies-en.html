@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="shortcut icon" href="images/favicon.png">
+            <title>Center for Advanced Research and Consultation in Smart Technologies</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <link rel="stylesheet" href="style/main.css">
+      </head>
+
+      <body>
+            <div id="wrapper">
+                  <header id="header">
+                  <button type="button" class="header__overlay" id="headerOverlay" hidden aria-label="Close menu"></button>
+                        <div class="container">
+                              <div class="header__bar d-flex align-items-center justify-content-between gap-3">
+                                    <a href="index-en.html" class="header__logo flex-shrink-0">
+                                          <img src="images/logo-en.svg" alt="Center for Advanced Research and Consultation in Smart Technologies" width="100" height="50">
+                                    </a>
+                                                                        <nav class="header__nav" id="headerNav" aria-label="Main navigation">
+                                          <div class="header__navHead">
+                                                <a href="index-en.html" class="header__navBrand">
+                                                      <img src="images/logo-en.svg" alt="">
+                                                </a>
+                                                <p class="header__navLabel">Explore the center</p>
+                                          </div>
+                                          <div class="header__navPanel">
+                                                <ul class="list-unstyled mb-0">
+                                                <li><a href="index-en.html"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Home</span></a></li>
+                                                <li><a href="research-and-studies-en.html" class="is-active"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Research &amp; Studies</span></a></li>
+                                                <li><a href="events-en.html"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Events</span></a></li>
+                                                <li><a href="organizational-structure-en.html"><i class="fa-solid fa-sitemap" aria-hidden="true"></i><span>Organizational Structure</span></a></li>
+                                                <li><a href="about-en.html"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>About the Center</span></a></li>
+                                                </ul>
+                                          </div>
+                                          <div class="header__navFoot">
+                                                <a href="#" class="header__navCta"><i class="fa-solid fa-user" aria-hidden="true"></i><span>Login</span></a>
+                                          </div>
+                                    </nav>
+                                    <div class="header__actions d-flex align-items-center flex-shrink-0">
+                                          <div class="header__tools d-flex align-items-center">
+                                                <a href="#" class="header__tool header__tool--login"><i class="fa-solid fa-user" aria-hidden="true"></i><span class="header__toolLabel">Login</span></a>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <button type="button" class="header__tool header__searchToggle" aria-expanded="false" aria-controls="headerSearch">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span class="header__toolLabel">Search</span>
+                                                </button>
+                                                <span class="header__sep" aria-hidden="true">|</span>
+                                                <a href="research-and-studies.html" class="header__tool" hreflang="ar"><i class="fa-solid fa-globe" aria-hidden="true"></i><span class="header__toolLabel">AR</span></a>
+                                          </div>
+                                    <div class="header__search" id="headerSearch">
+                                          <form class="header__searchForm" action="research-and-studies-en.html" method="get" role="search">
+                                                <input type="search" class="header__searchInput" name="q" placeholder="Search research and studies..." autocomplete="off">
+                                                <button type="submit" class="header__searchSubmit" aria-label="Search">
+                                                      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                                </button>
+                                          </form>
+                                    </div>
+                                          <button type="button" class="header__menuToggle" aria-expanded="false" aria-controls="headerNav" aria-label="Open menu">
+                                                <span class="header__menuIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+                                          </button>
+                                    </div>
+                              </div>
+                        </div>
+                  </header>
+                  <div class="banner banner--research">
+                        <div class="banner__bg is-active" style="background-image: url(images/img20.png)"></div>
+                        <div class="container">
+                              <div class="row justify-content-end align-items-center" data-sa-stagger data-sa-effect="reveal">
+                                    <div class="col-lg-8">
+                                          <h1>Research &amp; Studies</h1>
+                                          <p class="mb-4">Strategic reports, research, and studies with executive summaries built on scientific and methodological foundations. Attracting and developing research competencies and specialized expertise in targeted fields. Specialized scientific consultations to provide analyses and recommendations supporting decision-making in the public and private sectors.</p>
+                                          <ul class="banner-list" style="background: rgba(255, 255, 255, 0.10);">
+                                                <li>
+                                                      <i class="fa-solid fa-calendar-days"></i>
+                                                      <p>Since 2021 (research publishing began)</p>
+                                                </li>
+                                                <li>
+                                                      <i class="fa-solid fa-user-group"></i>
+                                                      <p>120+ (researchers and participating experts)</p>
+                                                </li>
+                                                <li>
+                                                      <i class="fa-solid fa-users"></i>
+                                                      <p>25+ (diverse research fields)</p>
+                                                </li>
+                                                <li>
+                                                      <i class="fa-solid fa-file"></i>
+                                                      <p>780+ (research and studies available to the public)</p>
+                                                </li>
+                                          </ul>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="researchFilterWrap">
+                              <div class="container">
+                                    <form class="researchFilter filterForm" id="researchFilterForm" action="" method="get" data-sa-stagger data-sa-effect="reveal">
+                                          <div class="researchFilter__row researchFilter__row--filters">
+                                                <div class="formField researchFilter__search">
+                                                      <input type="search" class="formField__control" name="q" placeholder="Search research and studies..." autocomplete="off">
+                                                      <i class="fa-solid fa-magnifying-glass formField__icon" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="formField formField--dropdown">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__placeholder">Keyword</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="ai">Artificial Intelligence</li>
+                                                            <li role="option" data-value="data">Data Analytics</li>
+                                                            <li role="option" data-value="innovation">Innovation</li>
+                                                            <li role="option" data-value="governance">Governance</li>
+                                                      </ul>
+                                                      <input type="hidden" name="keyword" value="">
+                                                </div>
+                                                <div class="formField formField--dropdown">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__placeholder">Research Field</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="smart-tech">Smart Technologies</li>
+                                                            <li role="option" data-value="data-science">Data Science</li>
+                                                            <li role="option" data-value="cybersecurity">Cybersecurity</li>
+                                                            <li role="option" data-value="digital">Digital Transformation</li>
+                                                      </ul>
+                                                      <input type="hidden" name="field" value="">
+                                                </div>
+                                                <div class="formField formField--dropdown">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__placeholder">Publication Type</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="report">Report</li>
+                                                            <li role="option" data-value="study">Study</li>
+                                                            <li role="option" data-value="paper">Research Paper</li>
+                                                            <li role="option" data-value="brief">Executive Brief</li>
+                                                      </ul>
+                                                      <input type="hidden" name="type" value="">
+                                                </div>
+                                                <div class="formField formField--dropdown">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__placeholder">Year</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="2025">2025</li>
+                                                            <li role="option" data-value="2024">2024</li>
+                                                            <li role="option" data-value="2023">2023</li>
+                                                            <li role="option" data-value="2022">2022</li>
+                                                            <li role="option" data-value="2021">2021</li>
+                                                      </ul>
+                                                      <input type="hidden" name="year" value="">
+                                                </div>
+                                                <div class="formField researchFilter__resetField">
+                                                      <button type="reset" class="formField__control researchFilter__reset">
+                                                            <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
+                                                            <span>Reset</span>
+                                                      </button>
+                                                </div>
+                                          </div>
+                                          <div class="researchFilter__row researchFilter__row--meta">
+                                                <div class="researchFilter__metaEnd">
+                                                      <div class="formField researchFilter__staticField">
+                                                            <div class="formField__control">Sort results:</div>
+                                                      </div>
+                                                      <div class="formField researchFilter__staticField">
+                                                            <div class="formField__control">Newest first</div>
+                                                            <input type="hidden" name="sort" value="newest">
+                                                      </div>
+                                                      <div class="formField researchFilter__staticField">
+                                                            <div class="formField__control">Showing 1 - 12 of 780 results</div>
+                                                      </div>
+                                                </div>
+                                                <div class="viewToggle" role="group" aria-label="View mode">
+                                                      <button type="button" class="viewToggle__btn is-active" data-view="grid" aria-pressed="true" aria-label="Grid view">
+                                                            <i class="fa-solid fa-grip" aria-hidden="true"></i>
+                                                      </button>
+                                                      <button type="button" class="viewToggle__btn" data-view="list" aria-pressed="false" aria-label="List view">
+                                                            <i class="fa-solid fa-list" aria-hidden="true"></i>
+                                                            <span>List view</span>
+                                                      </button>
+                                                </div>
+                                          </div>
+                                    </form>
+                              </div>
+                        </div>
+                  </div>
+
+                  <main>
+                        <section class="section pb-0" id="researchAreas" data-sa-stagger data-sa-effect="fan">
+                              <div class="container">
+                                    <div class="heading mb-0">
+                                          <h2>Our Work Areas</h2>
+                                    </div>
+                                    <p class="mb-5 text-center">We provide scientific and knowledge solutions that support innovation and data-driven decision-making</p>
+                                    <div class="gridBox grid4 text-center">
+                                          <div class="col">
+                                                <div class="box borderBox align-items-center">
+                                                      <img class="iconImg" src="images/c3.png" alt="Collaboration initiatives" width="35" height="35">
+                                                      <h5 class="mb-2">Collaboration &amp; Partnership Initiatives</h5>
+                                                      <p class="mb-0">Research and investment collaboration initiatives with academic and institutional partners locally and internationally.</p>
+                                                </div>
+                                          </div>
+                                          <div class="col">
+                                                <div class="box borderBox align-items-center">
+                                                      <img class="iconImg" src="images/c9.png" alt="Scientific consultations" width="35" height="35">
+                                                      <h5 class="mb-2">Scientific Consultations</h5>
+                                                      <p class="mb-0">Specialized scientific consultations providing analyses and recommendations supporting decision-making in the public and private sectors.</p>
+                                                </div>
+                                          </div>
+                                          <div class="col">
+                                                <div class="box borderBox align-items-center">
+                                                      <img class="iconImg" src="images/c10.png" alt="Strategic studies" width="35" height="35">
+                                                      <h5 class="mb-2">Strategic Studies</h5>
+                                                      <p class="mb-0">Strategic and foresight studies analyzing future trends, challenges, and opportunities for effective use of smart technologies.</p>
+                                                </div>
+                                          </div>
+                                          <div class="col">
+                                                <div class="box borderBox align-items-center">
+                                                      <img class="iconImg" src="images/c8.png" alt="Research and development" width="35" height="35">
+                                                      <h5 class="mb-2">Research, Development &amp; Studies</h5>
+                                                      <p class="mb-0">Advanced research, development, and study projects in artificial intelligence, data analytics, data science, and related smart technologies.</p>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </section>
+
+                        <section class="section" id="researchEmpty" data-sa-stagger data-sa-effect="rise">
+                              <div class="container">
+                                    <div class="mb-4">
+                                          <h4><i class="fa-regular fa-file-lines"></i> All Research &amp; Studies - 780 results <span class="badge smaller ms-2">780 results</span></h4>
+                                    </div>
+                                    <div class="emptyStateBox" data-sa="scale">
+                                          <div class="imgBox">
+                                                <img src="images/empty-en.svg" alt="No search results">
+                                          </div>
+                                          <p>No search results at the moment</p>
+                                          <p class="mb-0">Use the filters above to find research and studies</p>
+                                    </div>
+                              </div>
+                        </section>
+
+                        <section class="section pb-0" id="researchFeatured" hidden>
+                              <div class="container">
+                                    <div class="row" data-sa-stagger data-sa-effect="reveal">
+                                          <div class="col-lg-7 eventsFeatured__content">
+                                                <div class="box borderBox">
+                                                      <div class="badge">Featured Research</div>
+                                                      <h2>Generative AI in the Government Sector: Opportunities and Challenges in the Kingdom of Saudi Arabia</h2>
+                                                      <h5 class="mb-4">A comprehensive study reviewing the use of generative AI models in the Saudi government sector, analyzing key opportunities and challenges, and presenting a strategic framework for responsible and effective adoption.</h5>
+                                                      <div class="gridBox grid4 mb-4">
+                                                            <div class="box green smaller">Generative AI</div>
+                                                            <div class="box green smaller">Smart Government</div>
+                                                            <div class="box green smaller">Digital Transformation</div>
+                                                            <div class="box green smaller">Cybersecurity</div>
+                                                      </div>
+                                                      <div class="gridBox grid4">
+                                                            <span><i class="fa-solid fa-calendar-days"></i> April 2024</span>
+                                                            <span><i class="fa-solid fa-user"></i> Dr. Ahmed bin Saeed Al Mansour</span>
+                                                            <span><i class="fa-solid fa-file"></i> 128 pages</span>
+                                                            <span><i class="fa-solid fa-download"></i> 2.4K</span>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="col-lg-5">
+                                                <div class="imgBox objectFit">
+                                                      <img src="images/img21.png" alt="Generative AI in government sector">
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </section>
+                        <section class="section" id="researchResults" hidden>
+                              <div class="container">
+                                    <div class="mb-4" data-sa-stagger data-sa-effect="rise">
+                                          <h4><i class="fa-regular fa-file-lines"></i> All Research &amp; Studies - 780 results <span class="badge smaller ms-2">780 results</span></h4>
+                                    </div>
+                                    <div class="row mb-5" data-sa-stagger data-sa-effect="fan">
+                                          <div class="col-lg-3 mb-lg-0 mb-4">
+                                                <div class="imgCard researchCard">
+                                                      <div class="imgBox">
+                                                            <img src="images/img22.png" alt="Smart education platforms">
+                                                            <div class="badge">Smart Education</div>
+                                                      </div>
+                                                      <div class="content">
+                                                            <h4>Smart Platforms in Education: Models and Experiences from Saudi Arabia</h4>
+                                                            <p>An overview of leading smart education platforms and their impact on learning outcomes.</p>
+                                                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                                                  <span class="box green smaller">Smart Education</span>
+                                                                  <span class="box green smaller">Digital Transformation</span>
+                                                            </div>
+                                                            <div class="mb-3 date"><i class="fa-solid fa-calendar-days"></i> April 2024</div>
+                                                            <div class="filterForm inlineBox btnBox">
+                                                                  <a href="#" class="btn btn-primary">View Research</a>
+                                                                  <a href="#" class="btn btn-primary white"><i class="fa-solid fa-download"></i></a>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="col-lg-3 mb-lg-0 mb-4">
+                                                <div class="imgCard researchCard">
+                                                      <div class="imgBox">
+                                                            <img src="images/img23.png" alt="IoT in smart cities">
+                                                            <div class="badge">Smart Cities</div>
+                                                      </div>
+                                                      <div class="content">
+                                                            <h4>IoT Platforms in Managing Smart Urban Services</h4>
+                                                            <p>A methodological study of IoT applications in improving service management and operational efficiency in cities.</p>
+                                                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                                                  <span class="box green smaller">Internet of Things</span>
+                                                                  <span class="box green smaller">Smart Cities</span>
+                                                            </div>
+                                                            <div class="mb-3 date"><i class="fa-solid fa-calendar-days"></i> February 2025</div>
+                                                            <div class="filterForm inlineBox btnBox">
+                                                                  <a href="#" class="btn btn-primary">View Research</a>
+                                                                  <a href="#" class="btn btn-primary white"><i class="fa-solid fa-download"></i></a>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="col-lg-3 mb-lg-0 mb-4">
+                                                <div class="imgCard researchCard">
+                                                      <div class="imgBox">
+                                                            <img src="images/img24.png" alt="AI in healthcare">
+                                                            <div class="badge">Healthcare</div>
+                                                      </div>
+                                                      <div class="content">
+                                                            <h4>AI in Disease Diagnosis: An Applied Study in the Healthcare Sector</h4>
+                                                            <p>Evaluating deep learning model performance in diagnosing chronic diseases compared to traditional methods.</p>
+                                                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                                                  <span class="box green smaller">Artificial Intelligence</span>
+                                                                  <span class="box green smaller">Healthcare</span>
+                                                            </div>
+                                                            <div class="date mb-3"><i class="fa-solid fa-calendar-days"></i> March 2025</div>
+                                                            <div class="filterForm inlineBox btnBox">
+                                                                  <a href="#" class="btn btn-primary">View Research</a>
+                                                                  <a href="#" class="btn btn-primary white"><i class="fa-solid fa-download"></i></a>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="col-lg-3">
+                                                <div class="imgCard researchCard">
+                                                      <div class="imgBox">
+                                                            <img src="images/img25.png" alt="Cybersecurity infrastructure">
+                                                            <div class="badge">Cybersecurity</div>
+                                                      </div>
+                                                      <div class="content">
+                                                            <h4>Strengthening Cybersecurity in Critical Infrastructure Using AI</h4>
+                                                            <p>Analysis of the latest technologies and methods for protecting vital infrastructure from cyberattacks.</p>
+                                                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                                                  <span class="box green smaller">Cybersecurity</span>
+                                                                  <span class="box green smaller">Infrastructure</span>
+                                                            </div>
+                                                            <div class="date mb-3"><i class="fa-solid fa-calendar-days"></i> April 2025</div>
+                                                            <div class="filterForm inlineBox btnBox">
+                                                                  <a href="#" class="btn btn-primary">View Research</a>
+                                                                  <a href="#" class="btn btn-primary white"><i class="fa-solid fa-download"></i></a>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <nav class="paginationBar" aria-label="Page navigation" data-sa="rise">
+                                          <ul class="paginationBar__list">
+                                                <li>
+                                                      <a href="#" class="paginationBar__item" aria-label="Previous page">
+                                                            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                                      </a>
+                                                </li>
+                                                <li>
+                                                      <a href="#" class="paginationBar__item is-active" aria-current="page">1</a>
+                                                </li>
+                                                <li>
+                                                      <a href="#" class="paginationBar__item">2</a>
+                                                </li>
+                                                <li>
+                                                      <a href="#" class="paginationBar__item">3</a>
+                                                </li>
+                                                <li>
+                                                      <span class="paginationBar__item is-ellipsis" aria-hidden="true">...</span>
+                                                </li>
+                                                <li>
+                                                      <a href="#" class="paginationBar__item">21</a>
+                                                </li>
+                                                <li>
+                                                      <a href="#" class="paginationBar__item" aria-label="Next page">
+                                                            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                                      </a>
+                                                </li>
+                                          </ul>
+                                    </nav>
+                              </div>
+                        </section>
+
+                  </main>
+                  <footer id="footer">
+                        <div class="container">
+                              <div class="row justify-content-between">
+                                    <div class="col-auto">
+                                          <h4 class="text-white mb-3">About the Center</h4>
+                                          <p class="footer__about mb-0">A leading national center for developing research and consultations in smart technologies to enable digital transformation and achieve Saudi Vision 2030 goals.</p>
+                                    </div>
+                                    <div class="col-auto">
+                                          <h4 class="text-white mb-3">Contact Us</h4>
+                                          <ul class="contactList list-unstyled">
+                                                <li><i class="fa-solid fa-location-dot"></i> Riyadh, Kingdom of Saudi Arabia</li>
+                                                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@actis.gov.sa">info@actis.gov.sa</a></li>
+                                                <li><i class="fa-solid fa-phone"></i> <a href="tel:+966111234567">+966 11 123 4567</a></li>
+                                          </ul>
+                                    </div>
+                                    <div class="col-auto">
+                                          <h4 class="text-white mb-3">Quick Links</h4>
+                                          <ul class="list-unstyled">
+                                                <li><a href="#">Privacy Policy</a></li>
+                                                <li><a href="#">Terms of Use</a></li>
+                                                <li><a href="#">Accessibility</a></li>
+                                                <li><a href="#">Site Map</a></li>
+                                                <li><a href="#">News &amp; Media</a></li>
+                                          </ul>
+                                    </div>
+                                    <div class="col-auto">
+                                          <h4 class="text-white mb-3">Center Information</h4>
+                                          <ul class="list-unstyled">
+                                                <li><a href="#">Contact Form</a></li>
+                                                <li><a href="#">Complaints &amp; Suggestions</a></li>
+                                                <li><a href="#">About the Center</a></li>
+                                                <li><a href="#">FAQ</a></li>
+                                          </ul>
+                                    </div>
+                                    <div class="col-auto">
+                                          <div class="socialLinks">
+                                                <a href="#"><img src="images/s1.svg" alt=""></a>
+                                                <a href="#"><img src="images/s2.svg" alt=""></a>
+                                                <a href="#"><img src="images/s3.svg" alt=""></a>
+                                                <a href="#"><img src="images/s4.svg" alt=""></a>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </footer>
+            </div>
+            <script src="js/main.js" defer></script>
+            <script src="js/form.js" defer></script>
+            <script src="js/scroll-animation.js" defer></script>
+      </body>
+
+</html>
