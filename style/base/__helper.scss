@@ -195,8 +195,24 @@ html[dir='ltr'] .btn.icon {
       grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
 
+      @media (max-width: 991.98px) {
+            grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 575.98px) {
+            grid-template-columns: 1fr;
+      }
+
       &.grid4 {
             grid-template-columns: repeat(4, auto);
+
+            @media (max-width: 991.98px) {
+                  grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 575.98px) {
+                  grid-template-columns: 1fr;
+            }
 
             .borderBox {
                   justify-content: flex-start;

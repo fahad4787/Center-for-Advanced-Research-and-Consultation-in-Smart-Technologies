@@ -6138,8 +6138,28 @@ html[dir=ltr] .btn.icon.btn-primary:hover::after {
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 }
+@media (max-width: 991.98px) {
+  .gridBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575.98px) {
+  .gridBox {
+    grid-template-columns: 1fr;
+  }
+}
 .gridBox.grid4 {
   grid-template-columns: repeat(4, auto);
+}
+@media (max-width: 991.98px) {
+  .gridBox.grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575.98px) {
+  .gridBox.grid4 {
+    grid-template-columns: 1fr;
+  }
 }
 .gridBox.grid4 .borderBox {
   justify-content: flex-start;
@@ -7785,6 +7805,112 @@ html[dir=ltr] .orgChart .holder.col4::after {
   right: auto;
 }
 
+@media (max-width: 991.98px) {
+  .orgChart-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    padding-bottom: 0.75rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(45, 60, 38, 0.35) transparent;
+  }
+  .orgChart-wrap::-webkit-scrollbar {
+    height: 6px;
+  }
+  .orgChart-wrap::-webkit-scrollbar-thumb {
+    background: rgba(45, 60, 38, 0.35);
+    border-radius: 999px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .orgChart {
+    width: max-content;
+    min-width: 0;
+    margin-inline: auto;
+    padding-inline: 0.5rem;
+  }
+  .orgChart .box {
+    padding: 8px 10px;
+    border-radius: 6px;
+  }
+  .orgChart .iconBox {
+    gap: 0.5rem;
+  }
+  .orgChart .iconBox h4 {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .orgChart .iconBox img {
+    width: 22px;
+    height: 22px;
+  }
+  .orgChart .iconImg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .orgChart p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .orgChart .holder {
+    margin-bottom: 65px;
+    gap: 55px;
+  }
+  .orgChart .holder.col1 .col::after {
+    height: 65px;
+  }
+  .orgChart .holder.col2 {
+    max-width: 440px;
+  }
+  .orgChart .holder.col2 .col:first-child::before {
+    width: 40px;
+    left: -40px;
+  }
+  .orgChart .holder.col2 .col:first-child::after {
+    height: 65px;
+  }
+  .orgChart .holder.col3 {
+    max-width: 680px;
+  }
+  .orgChart .holder.col3::after {
+    top: -35px;
+    height: 35px;
+  }
+  .orgChart .holder.col3 .col:first-child::after {
+    height: 35px;
+  }
+  .orgChart .holder.col4 {
+    gap: 20px;
+    max-width: 520px;
+  }
+  .orgChart .holder.col4::after {
+    top: -35px;
+    height: 35px;
+  }
+  .orgChart .holder.col4 .col:nth-child(2)::after,
+  .orgChart .holder.col4 .col:nth-child(3)::after {
+    height: 35px;
+  }
+  html[dir=ltr] .orgChart .holder.col2 {
+    max-width: 500px;
+  }
+  html[dir=ltr] .orgChart .holder.col2 .col:first-child::before {
+    right: -40px;
+  }
+  html[dir=ltr] .orgChart .holder.col3 {
+    max-width: 720px;
+  }
+  html[dir=ltr] .orgChart .holder.col3 .col:last-child::after {
+    height: 35px;
+  }
+  .heading {
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+}
 footer {
   background-color: #3C4A30;
   color: #fff;

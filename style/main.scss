@@ -662,6 +662,141 @@ html[dir='ltr'] .orgChart {
       }
 }
 
+.orgChart-wrap {
+      @media (max-width: 991.98px) {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-x: contain;
+            padding-bottom: 0.75rem;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(45, 60, 38, 0.35) transparent;
+
+            &::-webkit-scrollbar {
+                  height: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                  background: rgba(45, 60, 38, 0.35);
+                  border-radius: 999px;
+            }
+      }
+}
+
+@media (max-width: 991.98px) {
+      .orgChart {
+            width: max-content;
+            min-width: 0;
+            margin-inline: auto;
+            padding-inline: 0.5rem;
+
+            .box {
+                  padding: 8px 10px;
+                  border-radius: 6px;
+            }
+
+            .iconBox {
+                  gap: 0.5rem;
+
+                  h4 {
+                        font-size: 13px;
+                        line-height: 1.35;
+                  }
+
+                  img {
+                        width: 22px;
+                        height: 22px;
+                  }
+            }
+
+            .iconImg {
+                  width: 28px !important;
+                  height: 28px !important;
+            }
+
+            p {
+                  font-size: 12px;
+                  line-height: 1.4;
+            }
+
+            .holder {
+                  margin-bottom: 65px;
+                  gap: 55px;
+
+                  &.col1 .col::after {
+                        height: 65px;
+                  }
+
+                  &.col2 {
+                        max-width: 440px;
+
+                        .col:first-child {
+                              &::before {
+                                    width: 40px;
+                                    left: -40px;
+                              }
+
+                              &::after {
+                                    height: 65px;
+                              }
+                        }
+                  }
+
+                  &.col3 {
+                        max-width: 680px;
+
+                        &::after {
+                              top: -35px;
+                              height: 35px;
+                        }
+
+                        .col:first-child::after {
+                              height: 35px;
+                        }
+                  }
+
+                  &.col4 {
+                        gap: 20px;
+                        max-width: 520px;
+
+                        &::after {
+                              top: -35px;
+                              height: 35px;
+                        }
+
+                        .col:nth-child(2)::after,
+                        .col:nth-child(3)::after {
+                              height: 35px;
+                        }
+                  }
+            }
+      }
+
+      html[dir='ltr'] .orgChart .holder {
+            &.col2 {
+                  max-width: 500px;
+
+                  .col:first-child::before {
+                        right: -40px;
+                  }
+            }
+
+            &.col3 {
+                  max-width: 720px;
+
+                  .col:last-child::after {
+                        height: 35px;
+                  }
+            }
+      }
+
+      .heading {
+            margin-bottom: 2rem;
+            gap: 1rem;
+      }
+}
+
 
 footer {
       background-color: #3C4A30;
