@@ -1,0 +1,264 @@
+$field-border: rgba(45, 60, 38, 0.2);
+$field-radius: 10px;
+$field-height: 48px;
+
+.filterForm {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(45, 60, 38, 0.12);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .btn-primary {
+            width: 100%;
+            justify-content: center;
+            background-color: #3C4A30;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 4px;
+
+            &::before {
+                  background-color: #2D3C26;
+            }
+
+            &.icon::after {
+                  color: #fff;
+            }
+
+            &:hover {
+                  color: #fff;
+                  border-color: transparent;
+            }
+      }
+}
+
+.formField {
+      position: relative;
+
+      &__control {
+            width: 100%;
+            height: $field-height;
+            padding-inline-start: 16px;
+            padding-inline-end: 44px;
+            border: 1px solid $field-border;
+            border-radius: $field-radius;
+            background: #fff;
+            color: #2D3C26;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.5;
+            text-align: start;
+            appearance: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+            &::placeholder {
+                  color: rgba(0, 0, 0, 0.45);
+            }
+
+            &:focus {
+                  outline: none;
+                  border-color: #2D3C26;
+                  box-shadow: 0 0 0 3px rgba(45, 60, 38, 0.1);
+            }
+      }
+
+      input[type='search'].formField__control {
+            &::-webkit-search-cancel-button {
+                  display: none;
+            }
+      }
+
+      &__toggle {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-align: start;
+            background: #fff;
+
+            .formField__value,
+            .formField__placeholder {
+                  flex: 1;
+                  min-width: 0;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+            }
+
+            .formField__placeholder {
+                  color: rgba(0, 0, 0, 0.45);
+            }
+
+            .formField__value {
+                  color: #2D3C26;
+            }
+      }
+
+      &__icon {
+            position: absolute;
+            inset-inline-end: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #2D3C26;
+            pointer-events: none;
+      }
+
+      &--dropdown.is-open {
+            .formField__icon {
+                  transform: translateY(-50%) rotate(180deg);
+            }
+
+            .formField__menu {
+                  opacity: 1;
+                  visibility: visible;
+                  transform: translateY(0);
+            }
+      }
+
+      &__menu {
+            position: absolute;
+            inset-inline: 0;
+            top: calc(100% + 6px);
+            z-index: 20;
+            margin: 0;
+            padding: 6px;
+            list-style: none;
+            background: #fff;
+            border: 1px solid $field-border;
+            border-radius: $field-radius;
+            box-shadow: 0 8px 20px rgba(45, 60, 38, 0.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+            max-height: 220px;
+            overflow-y: auto;
+
+            li {
+                  padding: 10px 12px;
+                  border-radius: 6px;
+                  color: #2D3C26;
+                  font-size: 16px;
+                  cursor: pointer;
+                  transition: background-color 0.2s ease;
+
+                  &:hover,
+                  &.is-selected {
+                        background: #DCEFDC;
+                  }
+            }
+      }
+
+      &--date {
+            .formField__placeholder {
+                  position: absolute;
+                  inset-inline-start: 16px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  color: rgba(0, 0, 0, 0.45);
+                  font-size: 16px;
+                  pointer-events: none;
+                  transition: opacity 0.2s ease;
+            }
+
+            &.has-value .formField__placeholder,
+            .formField__control:focus ~ .formField__placeholder {
+                  opacity: 0;
+            }
+
+            .formField__control {
+                  color: transparent;
+
+                  &:focus {
+                        color: #2D3C26;
+                  }
+            }
+
+            &.has-value .formField__control,
+            &.has-value .formField__control:focus {
+                  color: #2D3C26;
+            }
+
+            .formField__control::-webkit-calendar-picker-indicator {
+                  opacity: 0;
+                  position: absolute;
+                  inset: 0;
+                  width: 100%;
+                  height: 100%;
+                  cursor: pointer;
+            }
+      }
+}
+
+.formField--compact {
+      min-width: 180px;
+      flex-shrink: 0;
+
+      .formField__control {
+            height: 42px;
+            font-size: 16px;
+      }
+}
+
+html[dir='ltr'] {
+      .filterForm .btn-primary.icon::after {
+            transform: none;
+      }
+
+      .filterForm .btn-primary.icon:hover::after {
+            transform: translateX(6px);
+      }
+}
+
+
+
+.eventsToolbar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      .formField--compact {
+      
+            .formField__control {
+                  background: #F0F0F0;
+            }
+      }
+}
+
+.eventsTabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+}
+
+.eventsTab {
+      padding: 10px 18px;
+      border: 1px solid rgba(45, 60, 38, 0.15);
+      border-radius: 10px;
+      background: #F0F0F0;
+      color: #2D3C26;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+
+      &.is-active {
+            background: #3C4A30;
+            color: #fff;
+            border-color: #3C4A30;
+      }
+
+      &:hover:not(.is-active) {
+            background: #DCEFDC;
+            border-color: rgba(45, 60, 38, 0.2);
+      }
+}

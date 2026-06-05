@@ -3,6 +3,7 @@ $font-dir: '../fonts/';
 @import 'bootstrap/bootstrap';
 @import 'base/__typography';
 @import 'base/__helper';
+@import 'base/form';
 @import 'base/scroll-animation';
 
 html {
@@ -143,6 +144,47 @@ a {
       }
 }
 
+.banner-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-radius: 12px;
+      border: 1px solid #FFF;
+      background: #3C4A30;
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      font-size: 14px;
+
+      li {
+            border-left: 1px solid #FFF;
+            padding: 8px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            [dir='ltr'] & {
+                  border-left: none;
+                  border-right: 1px solid #FFF;
+            }
+            [dir='ltr'] &:last-child {
+                  border-right: none;
+            }
+
+            p {
+                  margin: 0;
+            }
+
+            i {
+                  font-size: 22px;
+            }
+
+            &:last-child {
+                  border-left: none;
+            }
+
+      }
+}
+
 section {
       position: relative;
       padding: 80px 0;
@@ -188,14 +230,43 @@ section {
             width: 30px;
             height: 30px;
       }
-      &.customBox{
+
+      &.customBox {
             align-items: flex-start;
             gap: 2rem;
-            img{
+
+            img {
                   width: 50px;
                   height: 50px;
             }
       }
+}
+
+
+
+.emptyStateBox {
+      margin: auto;
+      text-align: center;
+
+      .imgBox {
+            width: 200px;
+            z-index: 1;
+            position: relative;
+           margin: 0 auto 1rem auto;
+
+            &:after {
+                  position: absolute;
+                  content: "";
+                  inset: 0;
+                  background: radial-gradient(75.76% 75.76% at 50% 50%, rgba(60, 74, 48, 0.60) 0%, rgba(143, 176, 114, 0.00) 100%);
+                  border-radius: 50%;
+                  z-index: -1;
+                  filter: blur(5px);
+                  opacity: 0.5;
+            }
+      }
+
+
 }
 
 .brandHolder {
@@ -388,6 +459,7 @@ html[dir='ltr'] .orgChart {
       .holder {
             &.col2 {
                   max-width: 740px;
+
                   .col {
                         &:last-child {
                               left: auto;
@@ -405,6 +477,7 @@ html[dir='ltr'] .orgChart {
 
             &.col3 {
                   max-width: 100%;
+
                   .col {
                         &:first-child::after {
                               display: none;

@@ -165,4 +165,10 @@ html[dir='ltr'] .btn.icon {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
+      &.grid4{
+            grid-template-columns: repeat(4, 1fr);
+            .borderBox{
+                  justify-content: flex-start;
+            }
+      }
 }

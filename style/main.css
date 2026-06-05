@@ -6367,6 +6367,14 @@ h6 {
 [dir=ltr] h6 {
   margin: 0 0 0.5rem 0;
 }
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+  color: #2D3C26;
+}
 
 h1 {
   font-size: 3rem;
@@ -6377,6 +6385,10 @@ p {
 }
 [dir=ltr] p {
   margin: 0 0 1rem 0;
+}
+
+.text-green {
+  color: #2D3C26 !important;
 }
 
 .bg-green {
@@ -6515,6 +6527,235 @@ html[dir=ltr] .btn.icon.btn-primary:hover::after {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
+}
+.gridBox.grid4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.gridBox.grid4 .borderBox {
+  justify-content: flex-start;
+}
+
+.filterForm {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(45, 60, 38, 0.12);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.filterForm .btn-primary {
+  width: 100%;
+  justify-content: center;
+  background-color: #3C4A30;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 4px;
+}
+.filterForm .btn-primary::before {
+  background-color: #2D3C26;
+}
+.filterForm .btn-primary.icon::after {
+  color: #fff;
+}
+.filterForm .btn-primary:hover {
+  color: #fff;
+  border-color: transparent;
+}
+
+.formField {
+  position: relative;
+}
+.formField__control {
+  width: 100%;
+  height: 48px;
+  padding-inline-start: 16px;
+  padding-inline-end: 44px;
+  border: 1px solid rgba(45, 60, 38, 0.2);
+  border-radius: 10px;
+  background: #fff;
+  color: #2D3C26;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: start;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.formField__control::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+.formField__control::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+.formField__control:focus {
+  outline: none;
+  border-color: #2D3C26;
+  box-shadow: 0 0 0 3px rgba(45, 60, 38, 0.1);
+}
+.formField input[type=search].formField__control::-webkit-search-cancel-button {
+  display: none;
+}
+.formField__toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-align: start;
+  background: #fff;
+}
+.formField__toggle .formField__value,
+.formField__toggle .formField__placeholder {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.formField__toggle .formField__placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+.formField__toggle .formField__value {
+  color: #2D3C26;
+}
+.formField__icon {
+  position: absolute;
+  inset-inline-end: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #2D3C26;
+  pointer-events: none;
+}
+.formField--dropdown.is-open .formField__icon {
+  transform: translateY(-50%) rotate(180deg);
+}
+.formField--dropdown.is-open .formField__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.formField__menu {
+  position: absolute;
+  inset-inline: 0;
+  top: calc(100% + 6px);
+  z-index: 20;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid rgba(45, 60, 38, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(45, 60, 38, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.formField__menu li {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #2D3C26;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.formField__menu li:hover, .formField__menu li.is-selected {
+  background: #DCEFDC;
+}
+.formField--date .formField__placeholder {
+  position: absolute;
+  inset-inline-start: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 16px;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.formField--date.has-value .formField__placeholder,
+.formField--date .formField__control:focus ~ .formField__placeholder {
+  opacity: 0;
+}
+.formField--date .formField__control {
+  color: transparent;
+}
+.formField--date .formField__control:focus {
+  color: #2D3C26;
+}
+.formField--date.has-value .formField__control, .formField--date.has-value .formField__control:focus {
+  color: #2D3C26;
+}
+.formField--date .formField__control::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.formField--compact {
+  min-width: 180px;
+  flex-shrink: 0;
+}
+.formField--compact .formField__control {
+  height: 42px;
+  font-size: 16px;
+}
+
+html[dir=ltr] .filterForm .btn-primary.icon::after {
+  transform: none;
+}
+html[dir=ltr] .filterForm .btn-primary.icon:hover::after {
+  transform: translateX(6px);
+}
+
+.eventsToolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+.eventsToolbar .formField--compact .formField__control {
+  background: #F0F0F0;
+}
+
+.eventsTabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.eventsTab {
+  padding: 10px 18px;
+  border: 1px solid rgba(45, 60, 38, 0.15);
+  border-radius: 10px;
+  background: #F0F0F0;
+  color: #2D3C26;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+.eventsTab.is-active {
+  background: #3C4A30;
+  color: #fff;
+  border-color: #3C4A30;
+}
+.eventsTab:hover:not(.is-active) {
+  background: #DCEFDC;
+  border-color: rgba(45, 60, 38, 0.2);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6727,6 +6968,42 @@ html[dir=ltr] #header .header__tool {
   color: #fff;
 }
 
+.banner-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 12px;
+  border: 1px solid #FFF;
+  background: #3C4A30;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  font-size: 14px;
+}
+.banner-list li {
+  border-left: 1px solid #FFF;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+[dir=ltr] .banner-list li {
+  border-left: none;
+  border-right: 1px solid #FFF;
+}
+[dir=ltr] .banner-list li:last-child {
+  border-right: none;
+}
+.banner-list li p {
+  margin: 0;
+}
+.banner-list li i {
+  font-size: 22px;
+}
+.banner-list li:last-child {
+  border-left: none;
+}
+
 section {
   position: relative;
   padding: 80px 0;
@@ -6775,6 +7052,27 @@ section {
 .iconBox.customBox img {
   width: 50px;
   height: 50px;
+}
+
+.emptyStateBox {
+  margin: auto;
+  text-align: center;
+}
+.emptyStateBox .imgBox {
+  width: 200px;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto 1rem auto;
+}
+.emptyStateBox .imgBox:after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: radial-gradient(75.76% 75.76% at 50% 50%, rgba(60, 74, 48, 0.6) 0%, rgba(143, 176, 114, 0) 100%);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(5px);
+  opacity: 0.5;
 }
 
 .brandHolder {

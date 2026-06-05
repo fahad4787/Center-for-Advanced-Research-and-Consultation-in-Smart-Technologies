@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="shortcut icon" href="images/favicon.png">
+            <title>مركز الأبحاث المتقدمة والاستشارات في التقنيات الذكية</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <link rel="stylesheet" href="style/main.css">
+      </head>
+
+      <body>
+            <div id="wrapper">
+                  <header id="header">
+                        <div class="container">
+                              <div class="d-flex align-items-center justify-content-between gap-3">
+                                    <a href="index.html" class="header__logo flex-shrink-0">
+                                          <img src="images/logo.svg" alt="مركز الأبحاث المتقدمة والاستشارات في التقنيات الذكية" width="100" height="50">
+                                    </a>
+                                    <nav class="header__nav flex-grow-1" aria-label="القائمة الرئيسية">
+                                          <ul class="d-flex justify-content-center align-items-center gap-4 list-unstyled mb-0">
+                                                <li><a href="index.html">الرئيسية</a></li>
+                                                <li><a href="#">البحوث والدراسات</a></li>
+                                                <li><a href="events.html" class="is-active">الفعاليات</a></li>
+                                                <li><a href="organizational-structure.html">الهيكل التنظيمي</a></li>
+                                                <li><a href="about.html">عن المركز</a></li>
+                                          </ul>
+                                    </nav>
+                                    <div class="header__tools d-flex align-items-center flex-shrink-0">
+                                          <a href="#" class="header__tool"><i class="fa-solid fa-user" aria-hidden="true"></i><span>دخول</span></a>
+                                          <span class="header__sep" aria-hidden="true">|</span>
+                                          <a href="#" class="header__tool"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>بحث</span></a>
+                                          <span class="header__sep" aria-hidden="true">|</span>
+                                          <a href="events-en.html" class="header__tool" hreflang="en"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>EN</span></a>
+
+                                    </div>
+                              </div>
+                        </div>
+                  </header>
+                  <div class="banner">
+                        <div class="banner__bg is-active" style="background-image: url(images/img10.png)"></div>
+                        <div class="container">
+                              <div class="row justify-content-between align-items-center" data-sa-stagger data-sa-effect="reveal">
+                                    <div class="col-lg-7">
+                                          <h1><span>الفعاليات</span></h1>
+                                          <p class="mb-4 text-green w-65">دعم الابتكار والبحث والتطوير في تقنيات الذكية الناشئةتقديم استشارات علمية ومنهجية ومتخصصة في التقنيات الذكية</p>
+                                          <ul class="banner-list">
+                                                <li>
+                                                      <i class="fa-solid fa-users"></i>
+                                                      <p>15K+ (مشارك ومستفيد)</p>
+                                                </li>
+                                                <li>
+                                                      <i class="fa-solid fa-building"></i>
+                                                      <p>+10 (شركاء محليون ودوليون)</p>
+                                                </li>
+                                                <li>
+                                                      <i class="fa-solid fa-calendar-days"></i>
+                                                      <p>2023 (منذ عام تأسيس المركز)</p>
+                                                </li>
+                                                <li>
+                                                      <i class="fa-solid fa-user-group"></i>
+                                                      <p>+50 (فعالية منظمة)</p>
+                                                </li>
+                                          </ul>
+                                    </div>
+                                    <div class="col-lg-4">
+                                          <form class="filterForm" action="" method="get">
+                                                <div class="formField">
+                                                      <input type="search" class="formField__control" name="q" placeholder="ابحث عن فعالية..." autocomplete="off">
+                                                      <i class="fa-solid fa-magnifying-glass formField__icon" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="formField formField--dropdown">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__placeholder">اختر نوع الفعالية</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="conference">مؤتمر</li>
+                                                            <li role="option" data-value="workshop">ورشة عمل</li>
+                                                            <li role="option" data-value="seminar">ندوة</li>
+                                                            <li role="option" data-value="forum">ملتقى علمي</li>
+                                                      </ul>
+                                                      <input type="hidden" name="type" value="">
+                                                </div>
+                                                <div class="formField formField--dropdown">
+                                                      <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                            <span class="formField__placeholder">اختر المجال</span>
+                                                      </button>
+                                                      <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                      <ul class="formField__menu" role="listbox">
+                                                            <li role="option" data-value="ai">الذكاء الاصطناعي</li>
+                                                            <li role="option" data-value="data-analytics">تحليل البيانات</li>
+                                                            <li role="option" data-value="data-science">علوم البيانات</li>
+                                                            <li role="option" data-value="smart-tech">التقنيات الذكية</li>
+                                                      </ul>
+                                                      <input type="hidden" name="field" value="">
+                                                </div>
+                                                <div class="formField formField--date">
+                                                      <input type="date" class="formField__control" name="date">
+                                                      <span class="formField__placeholder">اختر التاريخ</span>
+                                                      <i class="fa-solid fa-calendar-days formField__icon" aria-hidden="true"></i>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary icon">بحث</button>
+                                          </form>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+
+                  <main>
+                        <section class="section pb-0" data-sa-stagger data-sa-effect="fan">
+                              <div class="container">
+                                    <div class="heading mb-0">
+                                          <h2>مجالات أعمالنا</h2>
+                                    </div>
+                                    <p class="mb-5 text-center">نقدم حلولاً علمية ومعرفية تدعم الابتكار واتخاذ القرار المبني على البيانات والمعرفة</p>
+                                    <div class="gridBox grid4 text-center">
+                                          <div class="col">
+                                                <div class="box borderBox align-items-center">
+                                                      <img class="iconImg" src="images/c6.png" alt="الاستقلالية العلمية" width="35" height="35">
+                                                      <h5 class="mb-2">مستقبل الذكاء الاصطناعي</h5>
+                                                      <p class="mb-0">العنوان الفرعي: مشاريع بحث وتطوير ودراسات متقدمة في الذكاء الاصطناعي، وتحليل البيانات، وعلوم البيانات، والتقنيات الذكية ذات الصلة.</p>
+                                                </div>
+                                          </div>
+                                          <div class="col">
+                                                <div class="box borderBox align-items-center">
+                                                      <img class="iconImg" src="images/c7.png" alt="الاستقلالية العلمية" width="35" height="35">
+                                                      <h5 class="mb-2">قمة الاستشراف الرقمي</h5>
+                                                      <p class="mb-0">العنوان الفرعي: دراسات استراتيجية واستشرافية لتحليل الاتجاهات المستقبلية، والتحديات، وفرص التوظيف الفعّال للتقنيات الذكية.</p>
+                                                </div>
+                                          </div>
+                                          <div class="col">
+                                                <div class="box borderBox align-items-center">
+                                                      <img class="iconImg" src="images/c8.png" alt="الاستقلالية العلمية" width="35" height="35">
+                                                      <h5 class="mb-2">ملتقى صناع القرار</h5>
+                                                      <p class="mb-0">العنوان الفرعي: استشارات علمية متخصصة لتقديم تحليلات وتوصيات داعمة للقرار في القطاعين العام والخاص.</p>
+                                                </div>
+                                          </div>
+                                          <div class="col">
+                                                <div class="box borderBox align-items-center">
+                                                      <img class="iconImg" src="images/c3.png" alt="الاستقلالية العلمية" width="35" height="35">
+                                                      <h5 class="mb-2">مؤتمر الشراكات الذكية</h5>
+                                                      <p class="mb-0">العنوان الفرعي: مبادرات تعاون وشراكات بحثية واستشارية مع جهات أكاديمية ومؤسسية محليًا ودوليًا.</p>
+                                                </div>
+                                          </div>
+                                          
+                                    </div>
+                              </div>
+                        </section>
+                        <section class="section" data-sa-stagger data-sa-effect="rise">
+                              <div class="container">
+                                    <div class="eventsToolbar">
+                                          <div class="eventsTabs" role="tablist" aria-label="تصفية الفعاليات">
+                                                <button type="button" class="eventsTab is-active" role="tab" aria-selected="true" data-filter="all">الكل</button>
+                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="conferences">المؤتمرات</button>
+                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="workshops">ورش العمل</button>
+                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="seminars">ندوات</button>
+                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="programs">برامج ودورات</button>
+                                                <button type="button" class="eventsTab" role="tab" aria-selected="false" data-filter="forums">مؤتمرات</button>
+                                          </div>
+                                          <div class="formField formField--dropdown formField--compact eventsSort">
+                                                <button type="button" class="formField__control formField__toggle" aria-expanded="false" aria-haspopup="listbox">
+                                                      <span class="formField__value">الأحدث أولاً</span>
+                                                </button>
+                                                <i class="fa-solid fa-chevron-down formField__icon" aria-hidden="true"></i>
+                                                <ul class="formField__menu" role="listbox">
+                                                      <li role="option" data-value="newest" class="is-selected" aria-selected="true">الأحدث أولاً</li>
+                                                      <li role="option" data-value="oldest" aria-selected="false">الأقدم أولاً</li>
+                                                </ul>
+                                                <input type="hidden" name="sort" value="newest">
+                                          </div>
+                                    </div>
+                                    <div class="emptyStateBox">
+                                          <div class="imgBox">
+                                                <img src="images/empty.svg" alt=" لا توجد نتائج للبحث">
+                                          </div>
+                                          <p>لا توجد فعاليات قادمة حالياً</p>
+                                          <p class="mb-0">ترقبوا الإعلان عنها قريباً</p>
+                                    </div>
+                              </div>
+                        </section>
+                  </main>
+                  <footer id="footer">
+                        <div class="container">
+                              <div class="row justify-content-between align-items-start">
+                                    <div class="col-auto">
+                                          <h4 class="text-white mb-3">عن المركز</h4>
+                                          <p class="footer__about mb-0">مركز وطني رائد في تطوير البحوث والاستشارات ستركز في مجال التقنيات الذكية لتمكين التحول الرقمي وتحقيق مستهدفات رؤية السعودية 2030.</p>
+                                    </div>
+                                    <div class="col-auto">
+                                          <h4 class="text-white mb-3">اتصل بنا</h4>
+                                          <ul class="contactList list-unstyled">
+                                                <li>الرياض، المملكة العربية السعودية <i class="fa-solid fa-location-dot"></i></li>
+                                                <li><a href="mailto:info@actis.gov.sa">info@actis.gov.sa</a> <i class="fa-solid fa-envelope"></i></li>
+                                                <li><a href="tel:+966111234567">+966 11 123 4567</a> <i class="fa-solid fa-phone"></i></li>
+                                          </ul>
+                                    </div>
+                                    <div class="col-auto">
+                                          <h4 class="text-white mb-3">روابط سريعة</h4>
+                                          <ul class="list-unstyled">
+                                                <li><a href="#">سياسة الخصوصية</a></li>
+                                                <li><a href="#">سياسة الاستخدام</a></li>
+                                                <li><a href="#">إمكانية الوصول</a></li>
+                                                <li><a href="#">خريطة الموقع</a></li>
+                                                <li><a href="#">الأخبار والإعلامية</a></li>
+                                          </ul>
+                                    </div>
+                                    <div class="col-auto">
+                                          <h4 class="text-white mb-3">معلومات مركز</h4>
+                                          <ul class="list-unstyled">
+                                                <li><a href="#">نموذج التواصل</a></li>
+                                                <li><a href="#">الشكاوى والاقتراحات</a></li>
+                                                <li><a href="#">عن المركز</a></li>
+                                                <li><a href="#">الأسئلة الشائعة</a></li>
+                                          </ul>
+                                    </div>
+                                    <div class="col-auto d-flex gap-3 align-items-center">
+                                          <div class="socialLinks flex-shrink-0">
+                                                <a href="#"><img src="images/s1.svg" alt=""></a>
+                                                <a href="#"><img src="images/s2.svg" alt=""></a>
+                                                <a href="#"><img src="images/s3.svg" alt=""></a>
+                                                <a href="#"><img src="images/s4.svg" alt=""></a>
+                                          </div>
+                                          <div class="imgBox flex-shrink-0">
+                                                <img src="images/footerFlag.png" alt="">
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </footer>
+            </div>
+            <script src="js/bootstrap.bundle.min.js" defer></script>
+            <script src="js/main.js" defer></script>
+            <script src="js/form.js" defer></script>
+            <script src="js/scroll-animation.js" defer></script>
+      </body>
+
+</html>

@@ -1,7 +1,7 @@
 (function () {
       var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var effects = ['rise', 'reveal', 'fan', 'sweep', 'scale', 'clip-up'];
-      var staggerSelectors = '.badge, p.w-65, .box.green, .box.borderBox, .col-lg-6 > .imgBox, .col-lg-5 > .imgBox, .col-lg-6 > h2, .col-lg-6 > h3, .col-lg-5 > p, .brandHolder > img, .heading, .gridBox > .col, .orgChart > .holder, .list > li';
+      var staggerSelectors = '.badge, p.w-65, p.text-center, .box.green, .box.borderBox, .col-lg-6 > .imgBox, .col-lg-5 > .imgBox, .col-lg-6 > h2, .col-lg-6 > h3, .col-lg-5 > p, .brandHolder > img, .heading, .gridBox > .col, .orgChart > .holder, .list > li, .banner h1, .banner-list > li, .filterForm, .eventsTab, .eventsSort, .emptyStateBox';
       var observer;
 
       function getEffect(el) {
