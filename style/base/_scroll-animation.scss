@@ -1,0 +1,119 @@
+$sa-ease: cubic-bezier(0.22, 1, 0.36, 1);
+$sa-duration: 0.85s;
+
+@media (prefers-reduced-motion: reduce) {
+      .sa,
+      .backToTop {
+            transition: none !important;
+      }
+}
+
+noscript .sa {
+      opacity: 1 !important;
+      transform: none !important;
+      clip-path: none !important;
+}
+
+.sa {
+      opacity: 0;
+      transition:
+            opacity $sa-duration $sa-ease,
+            transform $sa-duration $sa-ease,
+            clip-path $sa-duration $sa-ease;
+      will-change: transform, opacity;
+
+      &:not(.is-inview):not(.sa-complete) {
+            &.sa--rise {
+                  transform: translate3d(0, 52px, 0);
+            }
+
+            &.sa--reveal {
+                  clip-path: inset(0 100% 0 0 round 2px);
+                  transform: translate3d(0, 12px, 0);
+            }
+
+            &.sa--fan {
+                  transform: translate3d(0, 36px, 0) rotate(-3deg) scale(0.94);
+                  transform-origin: 50% 100%;
+            }
+
+            &.sa--sweep {
+                  transform: translate3d(-48px, 0, 0);
+            }
+
+            &.sa--scale {
+                  transform: scale(0.9);
+            }
+
+            &.sa--clip-up {
+                  clip-path: inset(100% 0 0 0 round 8px);
+            }
+      }
+
+      html[dir='rtl'] &:not(.is-inview):not(.sa-complete) {
+            &.sa--reveal {
+                  clip-path: inset(0 0 0 100% round 2px);
+            }
+
+            &.sa--sweep {
+                  transform: translate3d(48px, 0, 0);
+            }
+      }
+
+      &.is-inview,
+      &.sa-complete {
+            opacity: 1;
+            transform: none;
+            clip-path: none;
+      }
+
+      &.sa-complete {
+            will-change: auto;
+      }
+}
+
+.backToTop {
+      position: fixed;
+      bottom: 1.5rem;
+      inset-inline-end: 1.5rem;
+      z-index: 1000;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 50%;
+      background-color: #3C4A30;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(45, 60, 38, 0.28);
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(0, 16px, 0);
+      transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s ease,
+            background-color 0.2s ease;
+
+      i {
+            font-size: 18px;
+      }
+
+      &:hover {
+            background-color: #2D3C26;
+      }
+
+      &:focus-visible {
+            outline: 2px solid #2D3C26;
+            outline-offset: 3px;
+      }
+
+      &.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translate3d(0, 0, 0);
+      }
+}

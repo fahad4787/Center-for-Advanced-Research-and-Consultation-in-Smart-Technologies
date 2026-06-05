@@ -3,6 +3,7 @@ $font-dir: '../fonts/';
 @import 'bootstrap/bootstrap';
 @import 'base/__typography';
 @import 'base/__helper';
+@import 'base/scroll-animation';
 
 html {
       scroll-behavior: smooth;
