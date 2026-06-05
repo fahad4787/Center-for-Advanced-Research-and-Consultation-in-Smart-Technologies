@@ -45,6 +45,16 @@ a {
             width: 100%;
             height: 100%;
             display: block;
+            border-radius: 12px;
+      }
+
+      &.objectFit {
+            height: 100%;
+
+            img {
+                  object-fit: cover;
+
+            }
       }
 }
 
@@ -162,10 +172,12 @@ a {
             display: flex;
             align-items: center;
             gap: 12px;
+
             [dir='ltr'] & {
                   border-left: none;
                   border-right: 1px solid #FFF;
             }
+
             [dir='ltr'] &:last-child {
                   border-right: none;
             }
@@ -242,7 +254,97 @@ section {
       }
 }
 
+[class*='col']:has(.imgCard) {
+      display: flex;
+}
 
+.imgCard {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+
+      .imgBox {
+            position: relative;
+            flex-shrink: 0;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+
+            img {
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 12px 12px 0 0;
+            }
+
+            .badge {
+                  position: absolute;
+                  top: 8px;
+                  inset-inline-end: 8px;
+                  background: rgba(49, 63, 40, 0.50);
+                  font-size: 14px;
+                  color: #fff;
+                  padding: 3px 8px;
+                  margin-bottom: 0;
+            }
+      }
+
+      .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 18px 12px;
+            background: #F0F0F0;
+            border-radius: 0 0 12px 12px;
+
+
+            ul {
+                  margin: 0;
+                  padding: 0;
+                  list-style: none;
+                  display: flex;
+                  font-size: 12px;
+                  flex-wrap: wrap;
+                  gap: 0.5rem;
+                  flex: 1;
+                  align-content: flex-start;
+
+                  li {
+                        flex: 0 0 calc(50% - 0.5rem);
+                        max-width: calc(50% - 0.5rem);
+                        word-spacing: normal;
+
+                        i {
+                              font-size: 16px;
+                              margin-inline-start: 5px;
+                        }
+                  }
+            }
+
+            .textLink {
+                  margin-top: auto;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  gap: 0.5rem;
+                  text-decoration: none;
+                  font-size: 14px;
+                  font-weight: 500;
+
+                  i {
+                        transition: transform 0.3s ease-in-out;
+                  }
+
+                  &:hover i {
+                        transform: translateX(-2px);
+                  }
+            }
+      }
+}
+
+html[dir='ltr'] .imgCard .content .textLink:hover i {
+      transform: translateX(2px);
+}
 
 .emptyStateBox {
       margin: auto;
@@ -252,7 +354,7 @@ section {
             width: 200px;
             z-index: 1;
             position: relative;
-           margin: 0 auto 1rem auto;
+            margin: 0 auto 1rem auto;
 
             &:after {
                   position: absolute;
@@ -566,6 +668,7 @@ footer {
 
       .row {
             flex-wrap: nowrap;
+            align-items: center;
 
             >[class*='col'] {
                   flex: 0 0 auto;
@@ -573,7 +676,6 @@ footer {
                   max-width: none;
                   border-inline-start: 1px solid rgba(255, 255, 255, 0.2);
                   padding-inline-start: 2rem;
-                  min-height: -webkit-fill-available;
 
                   &:first-child {
                         border-inline-start: none;

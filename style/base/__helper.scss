@@ -1,28 +1,30 @@
-.bg-green{
+.bg-green {
       background: rgba(220, 239, 220, 0.40);
 
 }
+
 .list-unstyled {
       list-style: none;
       margin: 0;
       padding: 0;
 }
 
-.list{
+.list {
       margin: 0;
       padding-right: 15px;
-      
-      li{
+
+      li {
             margin-bottom: 18px;
-            &:last-child{
+
+            &:last-child {
                   margin-bottom: 0;
             }
       }
 }
 
 html[dir='ltr'] .list {
-  padding-right: 0;
-  padding-left: 15px;
+      padding-right: 0;
+      padding-left: 15px;
 }
 
 .btn {
@@ -106,6 +108,13 @@ html[dir='ltr'] .list {
                   transform: translateX(-6px);
             }
       }
+
+      &.bg-gray {
+
+            border-radius: 10px;
+            border: 1px solid rgba(49, 63, 40, 0.10);
+            background: #F0F0F0;
+      }
 }
 
 html[dir='ltr'] .btn.icon {
@@ -118,7 +127,7 @@ html[dir='ltr'] .btn.icon {
       }
 }
 
-.badge{
+.badge {
       background: #2D3C26;
       color: #F5F5F5;
       padding: 6px 18px;
@@ -129,7 +138,7 @@ html[dir='ltr'] .btn.icon {
 }
 
 
-.w-65{
+.w-65 {
       width: 65% !important;
 }
 
@@ -161,14 +170,22 @@ html[dir='ltr'] .btn.icon {
 }
 
 
-.gridBox{
+.gridBox {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
-      &.grid4{
+
+      &.grid4 {
             grid-template-columns: repeat(4, 1fr);
-            .borderBox{
+
+            .borderBox {
                   justify-content: flex-start;
             }
       }
+}
+
+
+hr {
+      border: 1px solid #D9D9D9;
+      width: 100%;
 }

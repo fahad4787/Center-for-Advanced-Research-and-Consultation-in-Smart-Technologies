@@ -33,6 +33,17 @@ $field-height: 48px;
                   border-color: transparent;
             }
       }
+      &.inlineBox{
+            background: transparent;
+            flex-direction: row;
+            align-items: center;
+            box-shadow: unset;
+            justify-content: space-between;
+            padding: 0;
+            *{
+                  width: fit-content;
+            }
+      }
 }
 
 .formField {
