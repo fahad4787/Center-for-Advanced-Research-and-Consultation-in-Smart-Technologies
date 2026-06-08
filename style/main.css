@@ -6400,14 +6400,34 @@ html[dir=ltr] .filterForm .btn-primary.icon:hover::after {
 }
 
 .banner--research .researchFilterWrap {
-  position: absolute;
-  inset-inline: 0;
-  bottom: 0;
+  position: relative;
   z-index: 2;
-  transform: translateY(50%);
-  margin: 0;
+  margin: 1.25rem 0 0;
 }
 
+@media (max-width: 1199.98px) {
+  .banner--research .researchFilterWrap {
+    order: 2;
+    width: 100%;
+    margin-top: clamp(1.25rem, 3vw, 2rem);
+  }
+  .banner--research .researchFilterWrap .container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .banner--research .researchFilterWrap .researchFilter {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .banner--research .researchFilterWrap {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    transform: translateY(50%);
+    margin: 0;
+  }
+}
 .researchFilter {
   gap: 16px;
   padding: 18px 20px;
@@ -6424,7 +6444,7 @@ html[dir=ltr] .filterForm .btn-primary.icon:hover::after {
   align-items: center;
 }
 .researchFilter__row--meta {
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
 }
 .researchFilter__search {
@@ -6532,23 +6552,49 @@ html[dir=ltr] .researchFilter__row--meta {
   .researchFilter__row--filters .researchFilter__resetField {
     justify-self: start;
   }
+  .researchFilter__row--meta {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .researchFilter__metaEnd {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .researchFilter__staticField .formField__control {
+    white-space: normal;
+  }
+  .viewToggle {
+    align-self: flex-start;
+  }
 }
 @media (max-width: 767.98px) {
   .researchFilter__row--filters {
     grid-template-columns: 1fr;
   }
-  .researchFilter__row--meta {
-    flex-direction: column;
-    align-items: stretch;
+  .researchFilter {
+    padding: 14px 16px;
+    gap: 12px;
   }
   .researchFilter__metaEnd {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .researchFilter__staticField {
+    width: 100%;
+  }
+  .researchFilter__staticField .formField__control {
     width: 100%;
   }
   .viewToggle {
-    justify-content: center;
-  }
-  .viewToggle {
+    width: 100%;
     justify-content: flex-start;
+  }
+}
+@media (min-width: 1200px) {
+  .researchFilter__row--meta {
+    justify-content: space-between;
   }
 }
 #header {
@@ -7064,11 +7110,30 @@ html[dir=ltr] #header .header__tool, html[dir=ltr] #header .header__searchToggle
   width: 100% !important;
 }
 .banner--research {
-  margin-bottom: clamp(2.5rem, 8vw, 5rem);
-  padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  padding-bottom: clamp(1rem, 3vw, 2rem);
 }
 .banner--research > .container {
   padding-bottom: clamp(1rem, 3vw, 2.5rem);
+}
+@media (max-width: 1199.98px) {
+  .banner--research {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    min-height: auto;
+  }
+  .banner--research > .container {
+    order: 1;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .banner--research {
+    margin-bottom: clamp(4rem, 10vw, 7rem);
+    padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  }
 }
 
 .banner-list {
@@ -7147,16 +7212,6 @@ html[dir=ltr] #header .header__tool, html[dir=ltr] #header .header__searchToggle
 @media (min-width: 992px) {
   .banner .w-65 {
     width: 65% !important;
-  }
-}
-@media (max-width: 991.98px) {
-  .banner--research .researchFilterWrap {
-    position: relative;
-    transform: none;
-    margin-top: 1.25rem;
-  }
-  .banner .filterForm {
-    margin-top: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -7509,6 +7564,20 @@ section {
 .imgCard.researchCard .btnBox .btn.white:hover {
   color: #fff;
 }
+@media (max-width: 575.98px) {
+  .imgCard.researchCard .btnBox {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .imgCard.researchCard .btnBox .btn {
+    width: 100%;
+  }
+  .imgCard.researchCard .btnBox .btn.white {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 html[dir=ltr] .imgCard .content .textLink:hover i {
   transform: translateX(2px);
@@ -7532,6 +7601,67 @@ html[dir=ltr] .imgCard .content .textLink:hover i {
   margin-top: 80px;
 }
 
+@media (max-width: 991.98px) {
+  .eventsPanel--results > .eventsToolbar {
+    margin-top: 3rem;
+  }
+  .eventsToolbar {
+    margin-bottom: 2.5rem;
+  }
+  .eventsFeatured .imgBox.objectFit {
+    height: auto;
+    aspect-ratio: 16/10;
+    min-height: 200px;
+  }
+  #researchFeatured .imgBox.objectFit {
+    height: auto;
+    aspect-ratio: 16/10;
+    min-height: 200px;
+  }
+}
+@media (max-width: 575.98px) {
+  .eventsPanel--results > .eventsToolbar {
+    margin-top: 2rem;
+  }
+  .eventsToolbar {
+    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .eventsTabs {
+    width: 100%;
+  }
+  .eventsTab {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+  .eventsSort {
+    width: 100%;
+  }
+  .eventsSort .formField__control {
+    width: 100%;
+  }
+  .filterForm.inlineBox {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .filterForm.inlineBox > * {
+    width: 100%;
+  }
+  .filterForm.inlineBox .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+  #researchEmpty h4,
+  #researchResults h4 {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    line-height: 1.4;
+  }
+  #researchFeatured .eventsFeatured__content h2 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+}
 .paginationBar {
   display: flex;
   justify-content: center;

@@ -275,12 +275,36 @@ html[dir='ltr'] {
 }
 
 .banner--research .researchFilterWrap {
-      position: absolute;
-      inset-inline: 0;
-      bottom: 0;
+      position: relative;
       z-index: 2;
-      transform: translateY(50%);
-      margin: 0;
+      margin: 1.25rem 0 0;
+}
+
+@media (max-width: 1199.98px) {
+      .banner--research .researchFilterWrap {
+            order: 2;
+            width: 100%;
+            margin-top: clamp(1.25rem, 3vw, 2rem);
+
+            .container {
+                  width: 100%;
+                  max-width: 100%;
+            }
+
+            .researchFilter {
+                  width: 100%;
+            }
+      }
+}
+
+@media (min-width: 1200px) {
+      .banner--research .researchFilterWrap {
+            position: absolute;
+            inset-inline: 0;
+            bottom: 0;
+            transform: translateY(50%);
+            margin: 0;
+      }
 }
 
 .researchFilter {
@@ -300,7 +324,7 @@ html[dir='ltr'] {
             }
 
             &--meta {
-                  justify-content: space-between;
+                  justify-content: flex-start;
                   gap: 1rem;
             }
       }
@@ -430,6 +454,28 @@ html[dir='ltr'] {
                   justify-self: start;
             }
       }
+
+      .researchFilter__row--meta {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+      }
+
+      .researchFilter__metaEnd {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+      }
+
+      .researchFilter__staticField {
+            .formField__control {
+                  white-space: normal;
+            }
+      }
+
+      .viewToggle {
+            align-self: flex-start;
+      }
 }
 
 @media (max-width: 767.98px) {
@@ -437,20 +483,32 @@ html[dir='ltr'] {
             grid-template-columns: 1fr;
       }
 
-      .researchFilter__row--meta {
-            flex-direction: column;
-            align-items: stretch;
+      .researchFilter {
+            padding: 14px 16px;
+            gap: 12px;
       }
 
       .researchFilter__metaEnd {
+            flex-direction: column;
+            align-items: flex-start;
+      }
+
+      .researchFilter__staticField {
             width: 100%;
+
+            .formField__control {
+                  width: 100%;
+            }
       }
 
       .viewToggle {
-            justify-content: center;
-      }
-
-      .viewToggle {
+            width: 100%;
             justify-content: flex-start;
+      }
+}
+
+@media (min-width: 1200px) {
+      .researchFilter__row--meta {
+            justify-content: space-between;
       }
 }

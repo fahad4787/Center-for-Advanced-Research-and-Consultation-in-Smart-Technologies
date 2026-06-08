@@ -42,11 +42,29 @@ $banner-breakpoint: 991.98px;
       }
 
       &--research {
-            margin-bottom: clamp(2.5rem, 8vw, 5rem);
-            padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+            padding-bottom: clamp(1rem, 3vw, 2rem);
 
             > .container {
                   padding-bottom: clamp(1rem, 3vw, 2.5rem);
+            }
+
+            @media (max-width: 1199.98px) {
+                  flex-direction: column;
+                  align-items: stretch;
+                  justify-content: flex-end;
+                  min-height: auto;
+
+                  > .container {
+                        order: 1;
+                        flex: 0 0 auto;
+                        width: 100%;
+                  }
+            }
+
+            @media (min-width: 1200px) {
+                  margin-bottom: clamp(4rem, 10vw, 7rem);
+                  padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
             }
       }
 }
@@ -140,17 +158,5 @@ $banner-breakpoint: 991.98px;
 @media (min-width: 992px) {
       .banner .w-65 {
             width: 65% !important;
-      }
-}
-
-@media (max-width: $banner-breakpoint) {
-      .banner--research .researchFilterWrap {
-            position: relative;
-            transform: none;
-            margin-top: 1.25rem;
-      }
-
-      .banner .filterForm {
-            margin-top: 0;
       }
 }
