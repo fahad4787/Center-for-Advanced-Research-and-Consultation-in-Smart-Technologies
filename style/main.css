@@ -6569,6 +6569,9 @@ html[dir=ltr] .researchFilter__row--meta {
   width: auto;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
+html[dir=ltr] #header .header__logo img {
+  height: 62px;
+}
 #header.is-nav-open .header__logo img {
   transform: scale(0.94);
 }
@@ -6880,9 +6883,12 @@ html[dir=ltr] #header .header__tool, html[dir=ltr] #header .header__searchToggle
   }
   #header .header__navBrand img {
     display: block;
-    height: 38px;
+    height: 52px;
     width: auto;
     filter: brightness(0) invert(1);
+  }
+  html[dir=ltr] #header .header__navBrand img {
+    height: 58px;
   }
   #header .header__navClose {
     display: inline-flex;
@@ -7012,6 +7018,9 @@ html[dir=ltr] #header .header__tool, html[dir=ltr] #header .header__searchToggle
   #header .header__logo img {
     height: 42px;
   }
+  html[dir=ltr] #header .header__logo img {
+    height: 50px;
+  }
   #header .header__search {
     inset-inline-end: 0;
     width: min(400px, 100vw - 1.5rem);
@@ -7108,7 +7117,7 @@ html[dir=ltr] #header .header__tool, html[dir=ltr] #header .header__searchToggle
   flex: 1 1 auto;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   padding: 8px 18px;
   border-inline-start: 1px solid #fff;
 }
@@ -7163,6 +7172,21 @@ html[dir=ltr] #header .header__tool, html[dir=ltr] #header .header__searchToggle
 @media (min-width: 992px) {
   .banner .w-65 {
     width: 65% !important;
+  }
+  .banner-list {
+    flex-wrap: nowrap;
+  }
+  .banner-list li {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 8px 12px;
+  }
+  html[dir=ltr] .banner-list {
+    font-size: 13px;
+  }
+  html[dir=ltr] .banner-list li {
+    padding: 8px 10px;
+    gap: 5px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -8019,10 +8043,31 @@ html[dir=ltr] footer .contactList li {
   flex-direction: row;
   justify-content: flex-start;
 }
+html[dir=ltr] footer .contactList li i {
+  order: -1;
+  flex-shrink: 0;
+}
 footer .socialLinks {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+footer .socialLinks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+footer .socialLinks a:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.22);
+  text-decoration: none;
 }
 footer .socialLinks img {
   width: 35px;
@@ -8174,6 +8219,166 @@ footer .footer__about {
 }
 .legalContent__contact a {
   word-break: break-word;
+}
+
+.contactForm {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(45, 60, 38, 0.12);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contactForm__intro {
+  margin-bottom: 0.5rem;
+}
+.contactForm__field {
+  position: relative;
+}
+.contactForm__field label {
+  position: absolute;
+  inset-inline-start: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0 4px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(45, 60, 38, 0.55);
+  background: #fff;
+  pointer-events: none;
+  transition: top 0.2s ease, transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+.contactForm__field:has(textarea) label {
+  top: 18px;
+  transform: translateY(0);
+}
+.contactForm__control {
+  width: 100%;
+  min-height: 56px;
+  padding: 20px 16px 10px;
+  border: 1px solid rgba(45, 60, 38, 0.2);
+  border-radius: 8px;
+  background: #fff;
+  color: #2D3C26;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, padding 0.2s ease;
+}
+.contactForm__control::placeholder {
+  color: transparent;
+}
+.contactForm__control:hover {
+  border-color: rgba(45, 60, 38, 0.35);
+}
+.contactForm__control:focus {
+  outline: none;
+  border-color: #2D3C26;
+  box-shadow: 0 0 0 3px rgba(45, 60, 38, 0.1);
+}
+.contactForm__control:focus, .contactForm__control:not(:placeholder-shown), .contactForm__control.has-value {
+  padding-top: 30px;
+}
+.contactForm__control:focus + label, .contactForm__control:not(:placeholder-shown) + label, .contactForm__control.has-value + label {
+  top: 8px;
+  transform: translateY(0) scale(0.82);
+  transform-origin: inline-start top;
+  font-weight: 500;
+  color: #2D3C26;
+}
+.contactForm__field:hover:not(:focus-within) .contactForm__control:placeholder-shown + label, .contactForm__field:hover:not(:focus-within) .contactForm__control:not(.has-value) + label {
+  top: 8px;
+  transform: translateY(0) scale(0.82);
+  transform-origin: inline-start top;
+  font-weight: 500;
+  color: rgba(45, 60, 38, 0.75);
+}
+.contactForm__field:hover:not(:focus-within):has(textarea) .contactForm__control:placeholder-shown + label {
+  top: 8px;
+  transform: translateY(0) scale(0.82);
+}
+.contactForm__selectWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contactForm__selectLabel {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2D3C26;
+}
+.contactForm__select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid rgba(45, 60, 38, 0.2);
+  border-radius: 8px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%232D3C26' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  color: #2D3C26;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.contactForm__select:hover {
+  border-color: rgba(45, 60, 38, 0.35);
+}
+.contactForm__select:focus {
+  outline: none;
+  border-color: #2D3C26;
+  box-shadow: 0 0 0 3px rgba(45, 60, 38, 0.1);
+}
+.contactForm__select:invalid {
+  color: rgba(45, 60, 38, 0.55);
+}
+html[dir=rtl] .contactForm .contactForm__select {
+  background-position: left 14px center;
+  padding-inline: 16px 40px;
+}
+.contactForm textarea.contactForm__control {
+  min-height: 148px;
+  resize: vertical;
+  padding-top: 24px;
+}
+.contactForm textarea.contactForm__control:focus, .contactForm textarea.contactForm__control:not(:placeholder-shown), .contactForm textarea.contactForm__control.has-value {
+  padding-top: 34px;
+}
+.contactForm__field:has(textarea) .contactForm__control:focus + label, .contactForm__field:has(textarea) .contactForm__control:not(:placeholder-shown) + label, .contactForm__field:has(textarea) .contactForm__control.has-value + label {
+  top: 8px;
+}
+.contactForm__actions {
+  display: flex;
+  justify-content: center;
+}
+.contactForm__actions .btn {
+  border-radius: 8px;
+  min-width: 180px;
+  padding: 10px 28px;
+}
+.contactForm__note {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+.contactForm__success {
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(45, 60, 38, 0.08);
+  color: #2D3C26;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

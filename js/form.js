@@ -188,7 +188,6 @@
             });
 
             function setView(showResults) {
-                  if (areasSection) areasSection.hidden = showResults;
                   emptySection.hidden = showResults;
                   featuredSection.hidden = !showResults;
                   resultsSection.hidden = !showResults;
@@ -219,7 +218,8 @@
 
             function showDefault() {
                   window.history.replaceState(null, '', window.location.pathname);
-                  setView(false);
+                  resetCustomDropdowns(form);
+                  setView(true);
             }
 
             function hasSearchParams() {
@@ -247,10 +247,7 @@
             });
 
             form.addEventListener('reset', function () {
-                  window.setTimeout(function () {
-                        resetCustomDropdowns(form);
-                        showDefault();
-                  }, 0);
+                  window.setTimeout(showDefault, 0);
             });
 
             form.querySelectorAll('.viewToggle__btn').forEach(function (btn) {
@@ -264,7 +261,7 @@
                   });
             });
 
-            setView(hasSearchParams());
+            setView(true);
       }
 
       function boot() {

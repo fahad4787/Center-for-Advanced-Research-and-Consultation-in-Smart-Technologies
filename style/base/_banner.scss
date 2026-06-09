@@ -91,7 +91,7 @@ $banner-breakpoint: 991.98px;
             flex: 1 1 auto;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 6px;
             padding: 8px 18px;
             border-inline-start: 1px solid #fff;
 
@@ -158,5 +158,24 @@ $banner-breakpoint: 991.98px;
 @media (min-width: 992px) {
       .banner .w-65 {
             width: 65% !important;
+      }
+
+      .banner-list {
+            flex-wrap: nowrap;
+
+            li {
+                  flex: 1 1 0;
+                  min-width: 0;
+                  padding: 8px 12px;
+            }
+      }
+
+      html[dir='ltr'] .banner-list {
+            font-size: 13px;
+
+            li {
+                  padding: 8px 10px;
+                  gap: 5px;
+            }
       }
 }
